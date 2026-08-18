@@ -18,12 +18,12 @@ export const metadata: Metadata = {
     "Big GCC thinking, nano-sized starting point. Size a unit from 5 to 100 professionals, prove the business case, and scale progressively.",
 };
 
-/** Unit counts climb only at the final, proven stage — the dots tell that story. */
+/** Unit counts climb only at the final, proven stage - the dots tell that story. */
 const STAGES: Stage[] = [
   {
     kicker: "Stage one",
     title: "Rapid Innovation",
-    body: "Begin with a focused idea and a team sized to test it. Nothing here is a commitment to scale — it is a commitment to find out.",
+    body: "Begin with a focused idea and a team sized to test it. Nothing here is a commitment to scale - it is a commitment to find out.",
     units: 3,
   },
   {
@@ -47,7 +47,7 @@ const STAGES: Stage[] = [
   {
     kicker: "Stage five",
     title: "Scale When Proven",
-    body: "Grow the unit on evidence — or change direction without carrying a large cost structure. Both outcomes stay affordable.",
+    body: "Grow the unit on evidence - or change direction without carrying a large cost structure. Both outcomes stay affordable.",
     units: 10,
     proven: true,
   },
@@ -67,12 +67,12 @@ export default function ModelPage() {
         lede="You don't need hundreds of employees and a major infrastructure investment to begin building capability in India. Start with a focused team, prove the business case, and scale progressively."
         note={{
           title: "Unit size",
-          body: "Typically 5 to 100 professionals, sized to the requirement — never to a template.",
+          body: "Typically 5 to 100 professionals, sized to the requirement - never to a template.",
         }}
       />
 
       {/* The page's centrepiece: size a unit and watch the trade-off move. */}
-      <Section index="04" label="Size a unit" note="Drag it — 5 to 100" tone="tone">
+      <Section index="04" label="Size a unit" note="Drag it - 5 to 100" tone="tone">
         <div style={{ maxWidth: "44ch", marginBottom: "clamp(28px, 4vw, 48px)" }}>
           <AnimatedHeading as="h2" className="display d-md">
             The unit is sized to the goal, not to a <em>template</em>.
@@ -110,7 +110,7 @@ export default function ModelPage() {
 
       <Section index="07" label="Succeed or exit" note="Either outcome stays cheap" size="lg">
         <PullQuote mark="The point of starting small">
-          If it succeeds you scale it. If it doesn&rsquo;t, you change direction — without carrying
+          If it succeeds you scale it. If it doesn&rsquo;t, you change direction - without carrying
           the cost structure of a conventional setup.
         </PullQuote>
         <div className="ed-aside" style={{ marginTop: "clamp(36px, 5vw, 72px)" }}>
@@ -136,7 +136,7 @@ export default function ModelPage() {
             {
               n: "Speed",
               title: "Faster access to curated capability",
-              body: "The ecosystem is already mapped — you don't start from zero.",
+              body: "The ecosystem is already mapped - you don't start from zero.",
             },
             {
               n: "Risk",

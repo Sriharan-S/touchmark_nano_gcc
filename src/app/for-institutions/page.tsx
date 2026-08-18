@@ -10,7 +10,7 @@ import { PHOTOS } from "@/lib/images";
 export const metadata: Metadata = {
   title: "For Institutions",
   description:
-    "Connect your campus to real international industry engagement — internships, MoUs, Centres of Excellence and Global Capability Center exposure for students and faculty.",
+    "Connect your campus to real international industry engagement - internships, MoUs, Centres of Excellence and Global Capability Center exposure for students and faculty.",
 };
 
 export default function ForInstitutionsPage() {
@@ -37,7 +37,7 @@ export default function ForInstitutionsPage() {
           </h1>
           <p className="body" style={{ maxWidth: "52ch", marginTop: 22 }}>
             The Touchmark Nano GCC ecosystem connects institutions to real international industry
-            engagement — internships, collaborations, and Global Capability Center exposure for
+            engagement - internships, collaborations, and Global Capability Center exposure for
             students and faculty.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function ForInstitutionsPage() {
           </AnimatedHeading>
           <Reveal>
             <p className="body-lg">
-              Membership connects your institution to opportunities and collaborations — it is not
+              Membership connects your institution to opportunities and collaborations - it is not
               direct access to a database of overseas company contacts.
             </p>
             <p className="body" style={{ marginTop: 20 }}>

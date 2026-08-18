@@ -17,14 +17,14 @@ export default function HomePage() {
     <>
       <HeroHome />
 
-      {/* The problem — text only, narrow lead against a wide column. */}
+      {/* The problem - text only, narrow lead against a wide column. */}
       <Section index="01" label="The challenge we solve" note="Stated plainly">
         <div className="ed-note">
           <p className="lead">Great ideas stall before they are ever tested.</p>
           <div className="hang">
             <Reveal>
               <p className="body-lg measure">
-                Global technology companies want access to great talent and innovation capacity —
+                Global technology companies want access to great talent and innovation capacity -
                 but building a full-scale offshore center from day one is slow, expensive and risky.
               </p>
               <p className="body measure" style={{ marginTop: 20 }}>
@@ -36,10 +36,10 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Full-bleed statement over the coastline — a breath between arguments. */}
+      {/* Full-bleed statement over the coastline - a breath between arguments. */}
       <Section index="02" label="The philosophy" size="lg" rule={false}>
         <PullQuote mark="Agility over scale">
-          A Nano GCC is a small, agile capability unit — built around one goal, and sized to prove
+          A Nano GCC is a small, agile capability unit - built around one goal, and sized to prove
           it.
         </PullQuote>
 
@@ -67,8 +67,8 @@ export default function HomePage() {
           <div>
             <div className="marginal">
               <b>Read this as a spec</b>
-              A Nano GCC is defined by what you are trying to prove. Everything else — size, shape,
-              duration — follows from that.
+              A Nano GCC is defined by what you are trying to prove. Everything else - size, shape,
+              duration - follows from that.
             </div>
             <Reveal className="acts">
               <Link href="/nano-gcc-model" className="act">
@@ -88,7 +88,7 @@ export default function HomePage() {
             </AnimatedHeading>
             <Reveal>
               <p className="body" style={{ marginTop: 24, maxWidth: "40ch" }}>
-                A Nano GCC begins with a focused team. Scale follows evidence — not a projection
+                A Nano GCC begins with a focused team. Scale follows evidence - not a projection
                 written before anything has been tested.
               </p>
             </Reveal>
@@ -99,7 +99,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Why Tamil Nadu — text beside a tall image, uneven columns. */}
+      {/* Why Tamil Nadu - text beside a tall image, uneven columns. */}
       <Section index="04" label="Why Tamil Nadu" note="Origin">
         <div className="ed-tall">
           <div>
@@ -112,8 +112,8 @@ export default function HomePage() {
                 infrastructure, and a maturing innovation ecosystem.
               </p>
               <p className="body measure" style={{ marginTop: 20 }}>
-                Touchmark connects global companies to this ecosystem — talent, institutions,
-                technology capability and innovation opportunity — in a structured, curated way.
+                Touchmark connects global companies to this ecosystem - talent, institutions,
+                technology capability and innovation opportunity - in a structured, curated way.
               </p>
               <div className="acts">
                 <Link href="/about" className="act">
@@ -131,7 +131,7 @@ export default function HomePage() {
         <Figure photo={PHOTOS.tidel} shape="wide" />
       </Section>
 
-      {/* Audiences as photographic panels — scanned visually, not read as a table. */}
+      {/* Audiences as photographic panels - scanned visually, not read as a table. */}
       <Section index="05" label="Who this is for" note="Three routes in" tone="tone">
         <AudiencePanels
           items={[

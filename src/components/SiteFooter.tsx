@@ -9,7 +9,7 @@ export default function SiteFooter() {
       <div className="page">
         <div className="foot-top">
           <div>
-            <Link href="/" className="brand foot-brand" aria-label="Touchmark Nano GCC Hub — home">
+            <Link href="/" className="brand foot-brand" aria-label="Touchmark Nano GCC Hub - home">
               <Logo variant="white" />
             </Link>
             <p className="display d-sm" style={{ color: "var(--paper)", marginTop: 26 }}>
@@ -63,7 +63,7 @@ export default function SiteFooter() {
           </div>
           {ALL_PHOTOS.map((p) => (
             <div key={p.src}>
-              {p.caption} — <a href={p.sourceUrl}>{p.credit}</a>, via Wikimedia Commons,{" "}
+              {p.caption} - <a href={p.sourceUrl}>{p.credit}</a>, via Wikimedia Commons,{" "}
               <a href={p.licenceUrl}>{p.licence}</a>
             </div>
           ))}

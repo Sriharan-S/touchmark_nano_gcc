@@ -47,7 +47,7 @@ export default function PartnersPage() {
             A network built on trust, <em>not a directory for sale</em>.
           </>
         }
-        lede="Touchmark works with a curated set of institutional, industry, government and innovation partners across Tamil Nadu. Categories are shown here for credibility — specific engagement details are shared only in direct, qualified conversations."
+        lede="Touchmark works with a curated set of institutional, industry, government and innovation partners across Tamil Nadu. Categories are shown here for credibility - specific engagement details are shared only in direct, qualified conversations."
         note={{
           title: "Why no logos",
           body: "Partner identities appear only once an engagement is formalized and cleared. Nothing here stands in for a relationship that does not exist.",

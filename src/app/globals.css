@@ -193,7 +193,7 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--mono); font-weight: 700; font-size: 0.6rem;
   letter-spacing: 0.18em; text-transform: uppercase; color: var(--seed);
 }
-.rotator-window { position: relative; height: 2.5em; overflow: hidden; }
+.rotator-window { position: relative; height: 3.1em; overflow: hidden; }
 .rotator-item {
   position: absolute; inset: 0; display: flex; align-items: center;
   font-family: var(--display); font-weight: 600;
@@ -674,7 +674,7 @@ a.entry:hover .go { opacity: 1; transform: none; color: var(--seed); }
   .hero-copy { font-size: 0.86rem; max-width: none; }
   .d-hero { font-size: clamp(1.7rem, 7.2vw, 2.4rem); }
   .rotator { min-width: 0; gap: 7px; }
-  .rotator-window { height: 2.2em; }
+  .rotator-window { height: 2.8em; }
   .hero-specs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 10px; }
   .hero-specs .spec:nth-child(n + 3) { display: none; }
   .hero-specs .spec b { font-size: 1.05rem; margin-top: 4px; }

@@ -19,7 +19,7 @@ export default function ContactPage() {
         index="10"
         label="Contact & Engage"
         title={<>Start a <em>conversation</em>.</>}
-        lede="Tell us who you are and what you're trying to build. We'll come back with what's realistic — commercial models, partners and delivery detail are discussed directly rather than published."
+        lede="Tell us who you are and what you're trying to build. We'll come back with what's realistic - commercial models, partners and delivery detail are discussed directly rather than published."
         note={{
           title: "Why a form, not an inbox",
           body: "This is a short qualification form. It keeps the mechanism out of public copy while still opening the door.",
@@ -35,7 +35,7 @@ export default function ContactPage() {
 
           <Reveal>
             <p className="body" style={{ marginTop: 24 }}>
-              We keep operational detail — sourcing, mapping and delivery mechanics — out of public
+              We keep operational detail - sourcing, mapping and delivery mechanics - out of public
               copy. It&rsquo;s shared in qualified conversations instead.
             </p>
           </Reveal>
@@ -47,18 +47,18 @@ export default function ContactPage() {
           <Reveal as="ol" className="elist" stagger style={{ marginTop: 30 }}>
             <li>
               <span>
-                <strong>Companies</strong> — tell us the capability goal you want to test.
+                <strong>Companies</strong> - tell us the capability goal you want to test.
               </span>
             </li>
             <li>
               <span>
-                <strong>Institutions</strong> — tell us your strengths and current industry
+                <strong>Institutions</strong> - tell us your strengths and current industry
                 engagement.
               </span>
             </li>
             <li>
               <span>
-                <strong>Talent</strong> —{" "}
+                <strong>Talent</strong> -{" "}
                 <Link href="/careers" style={{ borderBottom: "1px solid currentColor" }}>
                   register your interest here
                 </Link>

@@ -15,7 +15,7 @@ type Props = {
  * The brand atom, at full scale.
  *
  * `seed` units light up in teal on entry; the remainder fill in marigold as
- * the section scrolls — "start at 5, scale to 100, but only once it's proven".
+ * the section scrolls - "start at 5, scale to 100, but only once it's proven".
  * The same two colours carry that meaning everywhere else on the site.
  */
 export default function UnitDots({ total = 100, seed = 5, onPaper = false, showKey = true }: Props) {
@@ -69,11 +69,11 @@ export default function UnitDots({ total = 100, seed = 5, onPaper = false, showK
         <div className="units-key">
           <span>
             <i style={{ background: "var(--seed-l)" }} />
-            {seed} — the starting unit
+            {seed} - the starting unit
           </span>
           <span>
             <i style={{ background: "var(--proven)" }} />
-            {total - seed} — added once proven
+            {total - seed} - added once proven
           </span>
         </div>
       )}

@@ -11,7 +11,7 @@ export type Entry = {
 /**
  * An indexed list of entries.
  *
- * Used for enumerated content — capability areas, advisory groups, article
+ * Used for enumerated content - capability areas, advisory groups, article
  * pillars. The home page's audience section uses `AudiencePanels` instead,
  * because three equal rows there read like a spreadsheet.
  */

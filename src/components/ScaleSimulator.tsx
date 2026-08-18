@@ -33,7 +33,7 @@ const SHAPES = [
   {
     max: MAX,
     shape: "Scaled unit",
-    note: "A capability center in all but name — reached by growing into it on evidence, not by committing to it on day one.",
+    note: "A capability center in all but name - reached by growing into it on evidence, not by committing to it on day one.",
   },
 ];
 
@@ -74,8 +74,8 @@ export default function ScaleSimulator() {
             onChange={(e) => setSize(Number(e.target.value))}
           />
           <div className="sim-scale">
-            <span>5 — start here</span>
-            <span>100 — only once proven</span>
+            <span>5 - start here</span>
+            <span>100 - only once proven</span>
           </div>
         </div>
 
@@ -122,7 +122,7 @@ export default function ScaleSimulator() {
         </div>
 
         <p className="body" style={{ marginTop: 22, fontSize: "0.88rem", maxWidth: "48ch" }}>
-          Every Nano GCC is scoped in a conversation, not from a slider — but the
+          Every Nano GCC is scoped in a conversation, not from a slider - but the
           trade-off it shows is the real one.
         </p>
       </div>

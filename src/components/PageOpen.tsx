@@ -14,7 +14,7 @@ type Props = {
 /**
  * Type-led page opening on paper.
  *
- * Not every page opens on a photograph — alternating between this and a
+ * Not every page opens on a photograph - alternating between this and a
  * full-bleed `Stage` is what keeps the set of pages from feeling stamped out.
  */
 export default function PageOpen({ index, label, title, lede, note }: Props) {
@@ -24,18 +24,30 @@ export default function PageOpen({ index, label, title, lede, note }: Props) {
     const el = root.current;
     if (!el) return;
 
-    if (prefersReducedMotion()) {
-      gsap.set(el.querySelectorAll(".po-fade"), { opacity: 1, y: 0 });
+    const targets = el.querySelectorAll(".po-index, .po-rule, .po-title, .po-fade");
+    // Explicit final values, not clearProps: "all" - that would also strip the
+    // inline colour off the emphasised line.
+    const reveal = () => gsap.set(targets, { opacity: 1, y: 0, yPercent: 0, scaleX: 1 });
+
+    // Same guard as the home hero: a background-tab load gets no rAF, and the
+    // page title must not depend on an animation that may never run.
+    if (prefersReducedMotion() || document.hidden) {
+      reveal();
       return;
     }
 
     const ctx = gsap.context(() => {
-      gsap
+      const tl = gsap
         .timeline({ defaults: { ease: "expo.out" }, delay: 0.1 })
         .from(".po-index", { opacity: 0, duration: 0.7 })
         .from(".po-rule", { scaleX: 0, duration: 1.2 }, "-=0.45")
         .from(".po-title", { opacity: 0, y: 26, duration: 1.05 }, "-=1")
         .from(".po-fade", { opacity: 0, y: 18, duration: 0.85, stagger: 0.1 }, "-=0.8");
+
+      const failsafe = window.setTimeout(() => {
+        if (tl.progress() < 0.01) reveal();
+      }, 4000);
+      tl.eventCallback("onComplete", () => window.clearTimeout(failsafe));
     }, el);
 
     return () => ctx.revert();

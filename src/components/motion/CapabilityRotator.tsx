@@ -20,7 +20,7 @@ const HOLD = 2.2;
  * masked window with a timer bar running underneath.
  *
  * Says something concrete about what the Hub builds, rather than decorating
- * the corner — and it carries the information the removed marquee used to.
+ * the corner - and it carries the information the removed marquee used to.
  */
 export default function CapabilityRotator() {
   const root = useRef<HTMLDivElement>(null);

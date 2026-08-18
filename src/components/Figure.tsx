@@ -19,7 +19,7 @@ type Props = {
  *
  * The image is over-scaled inside its frame and drifts as the frame passes
  * through the viewport, so photography feels anchored to the page rather than
- * pasted onto it. The credit is mandatory — these are CC BY / CC BY-SA files.
+ * pasted onto it. The credit is mandatory - these are CC BY / CC BY-SA files.
  */
 export default function Figure({
   photo,

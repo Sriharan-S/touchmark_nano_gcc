@@ -26,7 +26,7 @@ export default function ForCompaniesPage() {
             Build capability in India without building a large GCC from <em>day one</em>.
           </>
         }
-        lede="Tell us what you're trying to build. We help you understand what's possible within Tamil Nadu's talent and innovation ecosystem, and shape a Nano GCC around your specific goals — without committing to a large-scale center upfront."
+        lede="Tell us what you're trying to build. We help you understand what's possible within Tamil Nadu's talent and innovation ecosystem, and shape a Nano GCC around your specific goals - without committing to a large-scale center upfront."
       />
 
       <Section size="sm" rule={false}>
@@ -39,12 +39,12 @@ export default function ForCompaniesPage() {
             {
               n: "01",
               title: "Share your capability goal",
-              body: "AI, product, R&D, prototyping, or support functions — start with the outcome you want.",
+              body: "AI, product, R&D, prototyping, or support functions - start with the outcome you want.",
             },
             {
               n: "02",
               title: "We scope the Nano GCC",
-              body: "Sized to your requirement — typically 5 to 100 professionals.",
+              body: "Sized to your requirement - typically 5 to 100 professionals.",
             },
             {
               n: "03",

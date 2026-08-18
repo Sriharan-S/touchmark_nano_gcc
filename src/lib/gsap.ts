@@ -16,7 +16,7 @@ export function registerGsap() {
 
 registerGsap();
 
-/** useLayoutEffect on the client, useEffect during SSR — avoids the hydration warning. */
+/** useLayoutEffect on the client, useEffect during SSR - avoids the hydration warning. */
 export const useIsoLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 

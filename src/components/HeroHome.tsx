@@ -22,17 +22,32 @@ export default function HeroHome() {
     const el = root.current;
     if (!el) return;
 
-    if (prefersReducedMotion()) {
-      gsap.set(el.querySelectorAll(".hl span, .hero-fade"), { opacity: 1, y: 0, yPercent: 0 });
+    const targets = el.querySelectorAll(".hl > span, .hero-index, .hero-fade");
+    // Explicit final values, not clearProps: "all" - that would also strip the
+    // inline colour off the emphasised line.
+    const reveal = () => gsap.set(targets, { opacity: 1, y: 0, yPercent: 0, scaleX: 1 });
+
+    // Never let an intro animation be the only thing standing between the
+    // reader and the headline. A page loaded in a background tab gets no
+    // requestAnimationFrame, so GSAP would apply the "from" state and never
+    // animate out of it, leaving the text hidden inside its mask.
+    if (prefersReducedMotion() || document.hidden) {
+      reveal();
       return;
     }
 
     const ctx = gsap.context(() => {
-      gsap
+      const tl = gsap
         .timeline({ defaults: { ease: "expo.out" }, delay: 0.15 })
         .from(".hero-index", { opacity: 0, duration: 0.8 })
         .from(".hl > span", { yPercent: 106, duration: 1.3, stagger: 0.08 }, "-=0.45")
         .from(".hero-fade", { opacity: 0, y: 20, duration: 0.9, stagger: 0.09 }, "-=0.9");
+
+      // Belt and braces: if the ticker never advanced, show everything anyway.
+      const failsafe = window.setTimeout(() => {
+        if (tl.progress() < 0.01) reveal();
+      }, 4000);
+      tl.eventCallback("onComplete", () => window.clearTimeout(failsafe));
     }, el);
 
     return () => ctx.revert();
@@ -67,7 +82,7 @@ export default function HeroHome() {
           <div className="hero-foot hero-fade">
             <p className="body hero-copy">
               Touchmark Nano GCC Hub helps global technology companies build agile capability in
-              India — without the cost, complexity or commitment of a traditional Global Capability
+              India - without the cost, complexity or commitment of a traditional Global Capability
               Center.
             </p>
 

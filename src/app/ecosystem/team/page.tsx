@@ -17,7 +17,7 @@ export const metadata: Metadata = {
  * Names and details of the sourcing, delivery and account-management team stay
  * internal, in line with the ecosystem's information protection principle.
  *
- * The "Government & Policy Liaison" group is deliberately absent — the content
+ * The "Government & Policy Liaison" group is deliberately absent - the content
  * guidance holds it back until a formal relationship with Tamil Nadu's economic
  * development bodies is confirmed.
  */
@@ -25,7 +25,7 @@ const GROUPS = [
   {
     n: "01",
     title: "Core leadership",
-    body: "Founder and director level. Bios focused on vision, background and track record — not day-to-day operational role. 2–4 profiles.",
+    body: "Founder and director level. Bios focused on vision, background and track record - not day-to-day operational role. 2–4 profiles.",
   },
   {
     n: "02",
@@ -55,7 +55,7 @@ export default function TeamPage() {
             The people <em>behind</em> the Hub.
           </>
         }
-        lede="Touchmark Nano GCC Hub is guided by a small leadership team and a set of advisory councils that bring industry, academic and innovation credibility to the ecosystem. These groups provide strategic oversight and validation — not operational points of contact."
+        lede="Touchmark Nano GCC Hub is guided by a small leadership team and a set of advisory councils that bring industry, academic and innovation credibility to the ecosystem. These groups provide strategic oversight and validation - not operational points of contact."
         note={{
           title: "Oversight only",
           body: "The sourcing, delivery and account-management team is not listed here, by design.",

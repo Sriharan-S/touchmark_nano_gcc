@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 const FAQS: Faq[] = [
   {
     q: "How is this different from outsourcing or staffing?",
-    a: "A Nano GCC is your own dedicated capability unit, built around your goals — not a shared staffing pool. It's designed to grow into your own team's extension, not a vendor relationship.",
+    a: "A Nano GCC is your own dedicated capability unit, built around your goals - not a shared staffing pool. It's designed to grow into your own team's extension, not a vendor relationship.",
   },
   {
     q: "What does institution membership actually include?",
-    a: "Access to relevant opportunities as they arise — internships, MoUs, Centres of Excellence, R&D collaborations — matched to your institution's strengths. It is not direct access to a contact database.",
+    a: "Access to relevant opportunities as they arise - internships, MoUs, Centres of Excellence, R&D collaborations - matched to your institution's strengths. It is not direct access to a contact database.",
   },
   {
     q: "How quickly can a company get started?",
@@ -27,7 +27,7 @@ const FAQS: Faq[] = [
   },
   {
     q: "Do we have to commit to a fixed team size upfront?",
-    a: "No. Nano GCCs are designed to start small — typically 5 to 100 professionals — and scale based on validated outcomes, not a fixed commitment.",
+    a: "No. Nano GCCs are designed to start small - typically 5 to 100 professionals - and scale based on validated outcomes, not a fixed commitment.",
   },
   {
     q: "Can a Nano GCC grow into a full-scale GCC?",
@@ -76,7 +76,7 @@ export default function FaqPage() {
           </AnimatedHeading>
           <Reveal>
             <p className="body" style={{ marginTop: 24 }}>
-              Ask it directly — we&rsquo;ll tell you what&rsquo;s realistic for your situation.
+              Ask it directly - we&rsquo;ll tell you what&rsquo;s realistic for your situation.
             </p>
             <div className="acts">
               <Link href="/contact" className="act primary">

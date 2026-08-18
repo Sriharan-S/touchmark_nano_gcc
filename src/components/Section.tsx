@@ -8,7 +8,7 @@ type Props = {
   label?: string;
   note?: string;
   tone?: "paper" | "tone" | "ink";
-  /** Vertical weight — sections are deliberately not all the same height. */
+  /** Vertical weight - sections are deliberately not all the same height. */
   size?: "sm" | "md" | "lg";
   rule?: boolean;
   children: ReactNode;
@@ -17,7 +17,7 @@ type Props = {
 
 /**
  * A section. The index marker and hairline are optional, and the vertical
- * weight varies by importance — uniform section heights are what made the
+ * weight varies by importance - uniform section heights are what made the
  * earlier layout read as generic.
  */
 export default function Section({

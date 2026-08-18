@@ -12,7 +12,7 @@ import { PHOTOS } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Insights & Stories",
   description:
-    "Perspectives on agile global capability — GCC trends, AI deployment, Tamil Nadu's innovation ecosystem, and anonymized success stories.",
+    "Perspectives on agile global capability - GCC trends, AI deployment, Tamil Nadu's innovation ecosystem, and anonymized success stories.",
 };
 
 export default function InsightsPage() {
@@ -26,7 +26,7 @@ export default function InsightsPage() {
             Perspectives on agile global <em>capability</em>.
           </>
         }
-        lede="A running set of short, credible articles and anonymized stories that build authority — without exposing how the ecosystem actually operates."
+        lede="A running set of short, credible articles and anonymized stories that build authority - without exposing how the ecosystem actually operates."
       />
 
       <Section index="08" label="Content pillars" note="Five running threads">
@@ -45,7 +45,7 @@ export default function InsightsPage() {
             {
               n: "03",
               title: "Inside Tamil Nadu's technology ecosystem",
-              body: "Talent, institutions and infrastructure — what the ecosystem actually offers.",
+              body: "Talent, institutions and infrastructure - what the ecosystem actually offers.",
             },
             {
               n: "04",
@@ -81,9 +81,9 @@ export default function InsightsPage() {
         </div>
       </Section>
 
-      <Section index="10" label="Example — illustrative only" note="Not a specific client" size="lg">
+      <Section index="10" label="Example - illustrative only" note="Not a specific client" size="lg">
         <PullQuote mark="Illustrative">
-          A US-based AI company validated a new product line with a small, focused Nano GCC — moving
+          A US-based AI company validated a new product line with a small, focused Nano GCC - moving
           from prototype to market-ready in a few months, and scaling on proven results.
         </PullQuote>
       </Section>

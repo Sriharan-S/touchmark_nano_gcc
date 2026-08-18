@@ -7,11 +7,11 @@ import SmoothScroll from "@/components/SmoothScroll";
 export const metadata: Metadata = {
   metadataBase: new URL("https://touchmark-nano-gcc.example"),
   title: {
-    default: "Touchmark Nano GCC Hub — Start Small. Innovate Fast. Scale Globally.",
-    template: "%s — Touchmark Nano GCC Hub",
+    default: "Touchmark Nano GCC Hub - Start Small. Innovate Fast. Scale Globally.",
+    template: "%s - Touchmark Nano GCC Hub",
   },
   description:
-    "Touchmark Nano GCC Hub helps global technology companies build agile capability in India — without the cost, complexity or commitment of a traditional Global Capability Center.",
+    "Touchmark Nano GCC Hub helps global technology companies build agile capability in India - without the cost, complexity or commitment of a traditional Global Capability Center.",
   openGraph: { type: "website", siteName: "Touchmark Nano GCC Hub", locale: "en_IN" },
 };
 

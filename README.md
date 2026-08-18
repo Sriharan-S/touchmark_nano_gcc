@@ -121,6 +121,24 @@ Two purpose-built pieces rather than generic sections:
   a scrolling narrative. Replaced the pinned horizontal carousel, which needed
   separate desktop and mobile behaviour and hid the reader's position.
 
+## Intro animations must never be the only path to visible content
+
+`HeroHome` and `PageOpen` reveal their headlines with a GSAP `from()` timeline.
+A page loaded in a **background tab gets no requestAnimationFrame**, so GSAP
+applies the start state (translated inside an `overflow: hidden` mask, opacity 0)
+and never animates out of it - the headline is simply invisible until the tab is
+focused. Both components therefore check `document.hidden` up front and show the
+final state instead, plus a 4s failsafe if the ticker never advances.
+
+Use explicit final values (`opacity: 1, y: 0, yPercent: 0, scaleX: 1`) for that
+reveal, **not `clearProps: "all"`** - clearProps also strips the inline colour
+off the emphasised line.
+
+## Punctuation
+
+Body copy uses plain hyphens, not em dashes. En dashes remain in numeric ranges
+(`5-100` is written `5–100`) and in `Industry–academia`.
+
 ## Forms
 
 Fields are filled wells with borders, placeholders and required markers.

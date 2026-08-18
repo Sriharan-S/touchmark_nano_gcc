@@ -3,7 +3,7 @@
  *
  * Two files from the parent brand: the colour lockup for paper backgrounds and
  * the white version for ink backgrounds and photographic headers. The mark is
- * never recoloured — it is the parent company's asset.
+ * never recoloured - it is the parent company's asset.
  */
 export default function Logo({ variant = "color" }: { variant?: "color" | "white" }) {
   return (

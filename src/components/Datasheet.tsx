@@ -3,7 +3,7 @@ import Reveal from "./motion/Reveal";
 
 export type Row = { k: string; v: ReactNode; m?: string };
 
-/** Key/value specification rows — the site reads as a datasheet, not a brochure. */
+/** Key/value specification rows - the site reads as a datasheet, not a brochure. */
 export default function Datasheet({ rows }: { rows: Row[] }) {
   return (
     <Reveal className="datasheet" stagger>

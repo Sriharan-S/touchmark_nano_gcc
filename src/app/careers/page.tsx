@@ -34,7 +34,7 @@ export default function CareersPage() {
           <Reveal as="ol" className="elist" stagger style={{ marginTop: 30 }}>
             <li>Tell us your area of expertise and interest</li>
             <li>We match profiles against live Nano GCC requirements as they arise</li>
-            <li>No guaranteed placement — this is a pipeline, not a job board</li>
+            <li>No guaranteed placement - this is a pipeline, not a job board</li>
           </Reveal>
         </div>
 

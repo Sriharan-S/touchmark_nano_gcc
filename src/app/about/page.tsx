@@ -11,7 +11,7 @@ import { PHOTOS } from "@/lib/images";
 export const metadata: Metadata = {
   title: "About & Vision",
   description:
-    "Built from Tamil Nadu. Designed for the world. An agile global innovation and capability-building ecosystem — not recruitment, outsourcing or conventional GCC consulting.",
+    "Built from Tamil Nadu. Designed for the world. An agile global innovation and capability-building ecosystem - not recruitment, outsourcing or conventional GCC consulting.",
 };
 
 export default function AboutPage() {
@@ -47,7 +47,7 @@ export default function AboutPage() {
             <Reveal>
               <p className="body-lg measure">
                 Global technology companies want agile access to talent and innovation capacity in
-                India, but the traditional route — a full-scale Global Capability Center — asks for
+                India, but the traditional route - a full-scale Global Capability Center - asks for
                 too much commitment too early.
               </p>
             </Reveal>
@@ -87,7 +87,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="body-lg">
               Touchmark Nano GCC Hub enables global companies to start small, innovate fast, and
-              build scalable capabilities from Tamil Nadu — while creating meaningful global
+              build scalable capabilities from Tamil Nadu - while creating meaningful global
               industry opportunities for the state&rsquo;s talent and institutions.
             </p>
             <p className="body" style={{ marginTop: 20 }}>
@@ -112,7 +112,7 @@ export default function AboutPage() {
               </p>
               <p className="body measure" style={{ marginTop: 20 }}>
                 Touchmark&rsquo;s role is to make that ecosystem legible and accessible to global
-                companies — connecting the right capability to the right requirement, without either
+                companies - connecting the right capability to the right requirement, without either
                 side having to navigate it alone.
               </p>
             </Reveal>
