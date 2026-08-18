@@ -68,7 +68,7 @@ export default function UnitDots({ total = 100, seed = 5, onPaper = false, showK
       {showKey && (
         <div className="units-key">
           <span>
-            <i style={{ background: "var(--seed-l)" }} />
+            <i style={{ background: "var(--seed)" }} />
             {seed} - the starting unit
           </span>
           <span>

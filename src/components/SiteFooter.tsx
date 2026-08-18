@@ -12,7 +12,7 @@ export default function SiteFooter() {
             <Link href="/" className="brand foot-brand" aria-label="Touchmark Nano GCC Hub - home">
               <Logo variant="white" />
             </Link>
-            <p className="display d-sm" style={{ color: "var(--paper)", marginTop: 26 }}>
+            <p className="display d-sm" style={{ marginTop: 26 }}>
               Start small.
               <br />
               Innovate fast.
