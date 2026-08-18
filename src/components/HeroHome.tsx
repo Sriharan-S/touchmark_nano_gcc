@@ -6,6 +6,7 @@ import { gsap, useIsoLayoutEffect, prefersReducedMotion } from "@/lib/gsap";
 import { PHOTOS } from "@/lib/images";
 import Stage from "./Stage";
 import Counter from "./motion/Counter";
+import UnitPulse from "./motion/UnitPulse";
 
 const LINES = [
   { text: "Start small.", em: false },
@@ -39,29 +40,20 @@ export default function HeroHome() {
 
   return (
     <div ref={root}>
-      <Stage photo={PHOTOS.chennai} priority height="94svh">
-        <div
-          className="page"
-          style={{
-            minHeight: "94svh",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-end",
-            paddingTop: 100,
-            paddingBottom: "clamp(28px, 4vw, 54px)",
-          }}
-        >
-          <div className="index hero-index" style={{ marginBottom: "auto", paddingTop: 20 }}>
-            <b>Touchmark</b>
-            <span>Nano GCC Hub — Tamil Nadu, India</span>
+      {/* The stage is exactly one viewport tall and the headline is capped in
+          vh as well as vw, so the hero never runs off the bottom of the screen. */}
+      <Stage photo={PHOTOS.chennai} priority height="100svh">
+        <div className="page hero-inner">
+          <div className="index hero-index">
+            <b>Touchmark Nano GCC Hub</b>
+            <span>Tamil Nadu, India</span>
           </div>
 
-          <h1 className="display d-xl" style={{ maxWidth: "13ch" }}>
+          <h1 className="display d-hero">
             {LINES.map((l) => (
               <span className="hl" key={l.text}>
                 <span
                   style={{
-                    display: "block",
                     fontStyle: l.em ? "italic" : undefined,
                     color: l.em ? "var(--proven)" : undefined,
                   }}
@@ -72,24 +64,16 @@ export default function HeroHome() {
             ))}
           </h1>
 
-          <div
-            className="hero-fade"
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "clamp(20px, 4vw, 60px)",
-              alignItems: "flex-end",
-              justifyContent: "space-between",
-              marginTop: "clamp(26px, 4vw, 48px)",
-            }}
-          >
-            <p className="body" style={{ maxWidth: "46ch", fontSize: "1rem" }}>
+          <div className="hero-foot hero-fade">
+            <p className="body hero-copy">
               Touchmark Nano GCC Hub helps global technology companies build agile capability in
               India — without the cost, complexity or commitment of a traditional Global Capability
               Center.
             </p>
 
-            <div className="acts" style={{ marginTop: 0 }}>
+            <UnitPulse />
+
+            <div className="acts hero-acts">
               <Link href="/nano-gcc-model" className="act primary">
                 Explore the model
               </Link>
@@ -99,7 +83,7 @@ export default function HeroHome() {
             </div>
           </div>
 
-          <div className="specs hero-fade" style={{ marginTop: "clamp(30px, 4.5vw, 58px)" }}>
+          <div className="specs hero-fade hero-specs">
             <div className="spec">
               Unit size
               <b>

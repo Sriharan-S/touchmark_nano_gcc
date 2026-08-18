@@ -6,15 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { NAV } from "@/lib/nav";
 import { gsap, ScrollTrigger, useIsoLayoutEffect } from "@/lib/gsap";
 
-/** The monogram: one seed unit, one proven unit. */
-function Mark() {
-  return (
-    <svg className="brand-mark" viewBox="0 0 26 26" aria-hidden>
-      <circle cx="8" cy="13" r="5" fill="var(--seed)" />
-      <circle cx="18" cy="13" r="5" fill="var(--proven)" />
-    </svg>
-  );
-}
+import Logo from "./Logo";
 
 export default function SiteHeader() {
   const pathname = usePathname();
@@ -56,10 +48,9 @@ export default function SiteHeader() {
     <header className={`head${solid ? " solid" : ""}${overImage ? " over-image" : ""}`}>
       <div className="head-in">
         <Link href="/" className="brand" aria-label="Touchmark Nano GCC Hub — home">
-          <Mark />
-          <span className="brand-txt">
-            Touchmark <i>/ Nano GCC Hub</i>
-          </span>
+          {/* White lockup while the header sits on a photograph. */}
+          <Logo variant={overImage && !solid ? "white" : "color"} />
+          <span className="brand-txt">Nano GCC Hub</span>
         </Link>
 
         <button

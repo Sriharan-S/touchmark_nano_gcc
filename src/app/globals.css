@@ -100,9 +100,9 @@ a { color: inherit; text-decoration: none; }
 .page { width: 100%; max-width: var(--page); margin: 0 auto; padding: 0 var(--gutter); }
 
 /* Section spacing varies by role rather than being uniform. */
-.sec { padding: clamp(56px, 8vw, 112px) 0; position: relative; }
-.sec-sm { padding: clamp(34px, 5vw, 62px) 0; }
-.sec-lg { padding: clamp(78px, 12vw, 180px) 0; }
+.sec { padding: clamp(44px, 5vw, 78px) 0; position: relative; }
+.sec-sm { padding: clamp(26px, 3vw, 44px) 0; }
+.sec-lg { padding: clamp(64px, 8vw, 124px) 0; }
 .sec.on-ink { background: var(--ink); }
 .sec.tone { background: var(--paper-2); }
 
@@ -143,7 +143,7 @@ a { color: inherit; text-decoration: none; }
 
 .measure { max-width: 62ch; }
 .measure-tight { max-width: 46ch; }
-.hang { margin-top: clamp(24px, 5vw, 88px); }
+.hang { margin-top: clamp(14px, 2.4vw, 44px); }
 
 /* ---------- figures: photography is first-class, always captioned ---------- */
 
@@ -180,10 +180,71 @@ a { color: inherit; text-decoration: none; }
 /* Hero headline lines slide up from behind a mask. overflow clips to the
    padding box, so the padding is what keeps descenders (g, y, j) visible —
    the negative margin puts the line spacing back. */
+/* The headline is capped in vh as well as vw so four lines plus the copy,
+   the running animation and the spec strip always fit one screen. */
+.d-hero { font-size: clamp(1.9rem, min(6vw, 9.4vh), 6.6rem); }
+
+.hero-inner {
+  min-height: 100svh; display: flex; flex-direction: column;
+  padding-top: clamp(84px, 11vh, 118px); padding-bottom: clamp(20px, 3vh, 40px);
+  gap: clamp(10px, 1.6vh, 22px);
+}
+.hero-index { margin-bottom: auto; }
+.hero-foot {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) auto minmax(0, auto);
+  gap: clamp(18px, 3vw, 54px); align-items: end;
+}
+.hero-copy { max-width: 44ch; font-size: clamp(0.88rem, 1vw, 1rem); }
+.hero-acts { margin-top: 0; }
+.hero-specs { margin-top: clamp(14px, 2.2vh, 30px); }
+
 .hl { display: block; overflow: hidden; padding-bottom: 0.18em; margin-bottom: -0.14em; }
 .hl > span { display: block; }
 .over { color: var(--paper); }
 .over .display { color: #fff; }
+
+/* ---------- hero unit pulse (runs continuously) ---------- */
+
+.pulse { display: flex; flex-direction: column; gap: 12px; }
+.pulse-grid { display: grid; gap: clamp(4px, 0.42vw, 8px); width: clamp(150px, 17vw, 268px); }
+.pulse-dot { aspect-ratio: 1; border-radius: 50%; background: rgba(240, 237, 229, 0.16); }
+.pulse-dot.seed { background: var(--seed-l); }
+.pulse-dot.grown { background: var(--proven); }
+.pulse-label {
+  display: flex; flex-wrap: wrap; gap: 6px 16px;
+  font-family: var(--mono); font-weight: 600; font-size: 0.56rem;
+  letter-spacing: 0.13em; text-transform: uppercase; color: rgba(240, 237, 229, 0.62);
+}
+.pulse-label i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+
+/* ---------- audience panels ---------- */
+
+.panels { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 1.6vw, 26px); }
+.panel { display: block; color: inherit; }
+.panel-img { position: relative; overflow: hidden; aspect-ratio: 4 / 3; background: var(--paper); }
+.panel-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.85s var(--ease), filter 0.5s var(--ease);
+  filter: saturate(0.82);
+}
+.panel:hover .panel-img img { transform: scale(1.05); filter: saturate(1); }
+.panel-n {
+  position: absolute; left: 0; top: 0; z-index: 2;
+  background: var(--ink); color: var(--proven);
+  font-family: var(--mono); font-weight: 700; font-size: 0.62rem; letter-spacing: 0.16em;
+  padding: 7px 12px;
+}
+.panel-body { padding-top: 18px; border-top: 1px solid var(--rule); margin-top: 14px; }
+.panel-body h3 { margin: 0 0 10px; }
+.panel-body p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; max-width: 34ch; }
+.panel-cta {
+  display: inline-flex; align-items: center; gap: 9px; margin-top: 16px;
+  font-family: var(--mono); font-weight: 700; font-size: 0.62rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--seed);
+}
+.panel-cta i { font-style: normal; transition: transform 0.35s var(--ease); }
+.panel:hover .panel-cta i { transform: translateX(6px); }
+@media (max-width: 900px) { .panels { grid-template-columns: 1fr; gap: 30px; } }
 
 /* ---------- pull quote — breaks the measure ---------- */
 
@@ -336,8 +397,15 @@ a.entry:hover .go { opacity: 1; transform: none; }
   display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 68px;
 }
 .brand { display: flex; align-items: center; gap: 10px; }
-.brand-mark { width: 24px; height: 24px; flex: none; }
-.brand-txt { font-family: var(--mono); font-weight: 700; font-size: 0.7rem; letter-spacing: 0.13em; text-transform: uppercase; white-space: nowrap; }
+.brand-logo { height: 26px; width: auto; flex: none; }
+.foot-brand .brand-logo { height: 34px; }
+/* "Nano GCC Hub" sits beside the parent wordmark, divided by a hairline. */
+.brand-txt {
+  font-family: var(--mono); font-weight: 600; font-size: 0.63rem;
+  letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap;
+  padding-left: 10px; margin-left: 2px; border-left: 1px solid currentColor;
+  opacity: 0.75;
+}
 .brand-txt i { font-style: normal; opacity: 0.55; }
 
 .nav { display: flex; align-items: center; flex-wrap: nowrap; gap: clamp(4px, 0.9vw, 16px); }
@@ -536,6 +604,31 @@ a.entry:hover .go { opacity: 1; transform: none; }
    Small screens
    ========================================================================== */
 
+@media (max-width: 1080px) {
+  /* The running animation needs room it does not have beside the copy. */
+  .hero-foot { grid-template-columns: minmax(0, 1fr) auto; }
+  .hero-acts { grid-column: 1 / -1; }
+}
+
+@media (max-width: 760px) {
+  /* Everything here exists to keep the hero inside one screen on a phone:
+     the stacked layout is much taller than the desktop row. */
+  .hero-inner { padding-top: 78px; padding-bottom: 14px; gap: 8px; }
+  .hero-foot { grid-template-columns: 1fr; align-items: start; gap: 14px; }
+  .hero-acts { grid-column: auto; margin-top: 2px; }
+  .hero-copy { font-size: 0.86rem; max-width: none; }
+  .d-hero { font-size: clamp(1.7rem, 7.2vw, 2.4rem); }
+
+  .pulse { gap: 8px; }
+  .pulse-grid { width: min(200px, 52vw); gap: 3px; }
+  .pulse-label { font-size: 0.5rem; gap: 4px 10px; }
+
+  /* Four spec tiles become two rows on a phone; the first two carry the point. */
+  .hero-specs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 10px; }
+  .hero-specs .spec:nth-child(n + 3) { display: none; }
+  .hero-specs .spec b { font-size: 1.05rem; margin-top: 4px; }
+}
+
 @media (max-width: 700px) {
   /* Display type is set tight for large screens; open it up when it wraps. */
   .display { line-height: 1.14; }
@@ -543,8 +636,8 @@ a.entry:hover .go { opacity: 1; transform: none; }
   .pull { max-width: none; }
 
   /* Stage headlines need room for the copy underneath on a short screen. */
-  .stage { min-height: auto !important; }
-  .stage-body > .page { min-height: auto !important; padding-top: 96px; padding-bottom: 40px; }
+  .stage:not(.stage-hero) { min-height: auto !important; }
+  .stage-body > .page:not(.hero-inner) { min-height: auto !important; padding-top: 96px; padding-bottom: 40px; }
 
   .specs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; }
   .spec b { font-size: 1.05rem; }
@@ -562,7 +655,16 @@ a.entry:hover .go { opacity: 1; transform: none; }
 
 @media (max-width: 420px) {
   .specs { grid-template-columns: 1fr; }
+  .hero-specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .head-in { gap: 12px; }
-  .brand-txt { font-size: 0.62rem; letter-spacing: 0.1em; }
-  .brand-txt i { display: none; }
+  .brand-txt { display: none; }
+  .brand-logo { height: 22px; }
+}
+
+/* Short viewports (landscape phones, small laptops) need the hero trimmed
+   further or the spec strip drops off the bottom. */
+@media (max-height: 700px) and (max-width: 1080px) {
+  .hero-inner { padding-top: 72px; gap: 6px; }
+  .hero-specs { margin-top: 6px; }
+  .pulse-grid { width: min(170px, 44vw); }
 }

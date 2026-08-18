@@ -49,6 +49,27 @@ Vertical weight varies too: `<Section size="sm|md|lg">`. Pages alternate between
 opening on a photograph (`Stage`) and opening on type (`PageOpen`) so the set
 does not feel stamped out.
 
+## Branding
+
+The header and footer use the Touchmark Descience wordmark from
+`public/brand` — colour lockup on paper, white on ink and over photographs
+(`src/components/Logo.tsx` switches between them). The mark is never recoloured.
+
+## SEO
+
+Twelve routes plus a 404, each exported as its own `index.html` with a unique
+`<title>` and meta description rendered into the HTML — not injected by script.
+Internal links are real `<a href>`, so crawlers walk the whole site. `sitemap.ts`
+and `robots.ts` generate `/sitemap.xml` and `/robots.txt` at build time.
+
+**Set the production domain in `src/app/sitemap.ts` (`SITE_URL`) once Vercel is
+pointed at the real hostname** — the sitemap currently advertises the preview URL.
+
+Verified against the source document with a script that checks 30 required
+content points across the pages and asserts the named organizations that must
+not be published (CII, FICCI, NASSCOM, Guidance Tamil Nadu, TIDCO, Startup TN)
+appear nowhere. All 30 pass.
+
 ## Photography
 
 Real photographs of Chennai and Tamil Nadu, not stock offices. Files are in
@@ -74,8 +95,10 @@ pictured institution, update the caption — don't imply it earlier.
     src/lib/nav.ts           navigation structure
     src/lib/gsap.ts          plugin registration + reduced-motion helper
 
-`UnitDots` is the brand motif: 100 dots, 5 teal seed, the rest filling amber on
-scroll. `JourneyScroller` pins and moves the five stages sideways, each carrying
+`UnitPulse` runs continuously in the hero: five teal units appear, the rest fill
+in amber, it holds, resets and repeats — the proposition on a loop.
+`UnitDots` is the same motif at full scale: 100 dots, 5 teal seed, the rest
+filling amber on scroll. `JourneyScroller` pins and moves the five stages sideways, each carrying
 its own unit count so the team visibly grows only at the proven stage.
 
 Every motion primitive checks `prefers-reduced-motion` and renders static.
@@ -112,9 +135,15 @@ large displays instead of stranding the page mid-screen. The container is
 Breakpoints: 1080px nav collapses to a menu, 900px editorial columns stack,
 760px the journey stacks, 700px and 420px mobile refinements.
 
-Verified at 390px and 768px by rendering the site inside an iframe of that
-width — an iframe gets its own viewport, so media queries evaluate correctly.
-The test browser itself could not be resized. No horizontal overflow at 390px.
+Verified at 390px, 760px and 820px by rendering the site inside an iframe of
+that width — an iframe gets its own viewport, so media queries evaluate
+correctly. The test browser itself cannot be resized. No horizontal overflow,
+and the hero fits exactly one viewport at every width tested.
+
+**The hero must never exceed one screen.** `.d-hero` is capped in `vh` as well
+as `vw` for that reason, and the mobile rules drop the last two spec tiles and
+shrink the pulse to hold the constraint. Adding anything to the hero means
+re-checking it at 390x760.
 
 **Descenders:** headings must never sit inside an unpadded `overflow: hidden`
 wrapper. Fraunces has deep descenders and SplitText's `mask` option clips at the

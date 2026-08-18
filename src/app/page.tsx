@@ -2,30 +2,20 @@ import Link from "next/link";
 import HeroHome from "@/components/HeroHome";
 import Section from "@/components/Section";
 import Figure from "@/components/Figure";
-import Entries from "@/components/Entries";
+import AudiencePanels from "@/components/AudiencePanels";
 import PullQuote from "@/components/PullQuote";
 import Datasheet from "@/components/Datasheet";
 import AnimatedHeading from "@/components/motion/AnimatedHeading";
 import Reveal from "@/components/motion/Reveal";
-import Marquee from "@/components/motion/Marquee";
 import UnitDots from "@/components/motion/UnitDots";
 import Counter from "@/components/motion/Counter";
 import { PHOTOS } from "@/lib/images";
 
-const CAPABILITIES = [
-  "AI deployment & engineering",
-  "Product engineering & R&D",
-  "Deep-tech development",
-  "Rapid prototyping & market validation",
-  "Technology support",
-  "Selected back-office functions",
-];
 
 export default function HomePage() {
   return (
     <>
       <HeroHome />
-      <Marquee items={CAPABILITIES} />
 
       {/* The problem — text only, narrow lead against a wide column. */}
       <Section index="01" label="The challenge we solve" note="Stated plainly">
@@ -141,30 +131,33 @@ export default function HomePage() {
         <Figure photo={PHOTOS.tidel} shape="wide" />
       </Section>
 
-      {/* Audiences — an indexed list, not three identical cards. */}
+      {/* Audiences as photographic panels — scanned visually, not read as a table. */}
       <Section index="05" label="Who this is for" note="Three routes in" tone="tone">
-        <Entries
+        <AudiencePanels
           items={[
             {
               n: "01",
               title: "For Companies",
               body: "Build capability in India without a large GCC from Day One.",
               href: "/for-companies",
-              go: "Learn more",
+              cta: "Build a Nano GCC",
+              photo: PHOTOS.tidel,
             },
             {
               n: "02",
               title: "For Institutions",
               body: "Bring global industry exposure and GCC-readiness to campus.",
               href: "/for-institutions",
-              go: "Learn more",
+              cta: "Become a member",
+              photo: PHOTOS.college,
             },
             {
               n: "03",
               title: "For Talent",
               body: "Get on the radar for Nano GCC opportunities as they open.",
               href: "/careers",
-              go: "Learn more",
+              cta: "Register interest",
+              photo: PHOTOS.coast,
             },
           ]}
         />

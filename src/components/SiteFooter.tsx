@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FOOTER_LINKS } from "@/lib/nav";
 import { ALL_PHOTOS } from "@/lib/images";
+import Logo from "./Logo";
 
 export default function SiteFooter() {
   return (
@@ -8,7 +9,10 @@ export default function SiteFooter() {
       <div className="page">
         <div className="foot-top">
           <div>
-            <p className="display d-sm" style={{ color: "var(--paper)" }}>
+            <Link href="/" className="brand foot-brand" aria-label="Touchmark Nano GCC Hub — home">
+              <Logo variant="white" />
+            </Link>
+            <p className="display d-sm" style={{ color: "var(--paper)", marginTop: 26 }}>
               Start small.
               <br />
               Innovate fast.

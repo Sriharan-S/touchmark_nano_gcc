@@ -33,16 +33,25 @@ export default function Counter({
     }
 
     const state = { v: from };
+
+    // Counters above the fold are already past their trigger point when the
+    // page loads, which left them stuck showing the "from" value. Run those
+    // straight away and only use ScrollTrigger for ones further down.
+    const inViewOnLoad = el.getBoundingClientRect().top < window.innerHeight;
+
     const ctx = gsap.context(() => {
       gsap.to(state, {
         v: to,
         duration,
         ease: "power2.out",
         snap: { v: 1 },
+        delay: inViewOnLoad ? 0.7 : 0,
         onUpdate: () => {
           el.textContent = `${prefix}${Math.round(state.v)}${suffix}`;
         },
-        scrollTrigger: { trigger: el, start: "top 88%", once: true },
+        ...(inViewOnLoad
+          ? {}
+          : { scrollTrigger: { trigger: el, start: "top 88%", once: true } }),
       });
     }, el);
 

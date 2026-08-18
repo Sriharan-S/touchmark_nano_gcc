@@ -9,10 +9,11 @@ export type Entry = {
 };
 
 /**
- * An indexed list of entries, replacing the uniform card grid.
+ * An indexed list of entries.
  *
- * Rows share a rhythm but the eye reads them as a list rather than a set of
- * identical boxes — which is what made the previous versions feel templated.
+ * Used for enumerated content — capability areas, advisory groups, article
+ * pillars. The home page's audience section uses `AudiencePanels` instead,
+ * because three equal rows there read like a spreadsheet.
  */
 export default function Entries({ items }: { items: Entry[] }) {
   return (
