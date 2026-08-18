@@ -1,0 +1,44 @@
+"use client";
+
+import { useEffect } from "react";
+import Lenis from "lenis";
+import { usePathname } from "next/navigation";
+import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
+
+/**
+ * Drives the page with Lenis and keeps ScrollTrigger in step with it.
+ * Skipped entirely when the visitor prefers reduced motion.
+ */
+export default function SmoothScroll() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (prefersReducedMotion()) return;
+
+    const lenis = new Lenis({
+      duration: 1.05,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    const raf = (time: number) => lenis.raf(time * 1000);
+    gsap.ticker.add(raf);
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove(raf);
+      lenis.destroy();
+    };
+  }, []);
+
+  // Every route change lands at the top with fresh trigger positions.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const id = window.setTimeout(() => ScrollTrigger.refresh(), 120);
+    return () => window.clearTimeout(id);
+  }, [pathname]);
+
+  return null;
+}

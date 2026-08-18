@@ -1,0 +1,37 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import SmoothScroll from "@/components/SmoothScroll";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://touchmark-nano-gcc.example"),
+  title: {
+    default: "Touchmark Nano GCC Hub — Start Small. Innovate Fast. Scale Globally.",
+    template: "%s — Touchmark Nano GCC Hub",
+  },
+  description:
+    "Touchmark Nano GCC Hub helps global technology companies build agile capability in India — without the cost, complexity or commitment of a traditional Global Capability Center.",
+  openGraph: { type: "website", siteName: "Touchmark Nano GCC Hub", locale: "en_IN" },
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <SmoothScroll />
+        <SiteHeader />
+        <main id="main">{children}</main>
+        <SiteFooter />
+      </body>
+    </html>
+  );
+}

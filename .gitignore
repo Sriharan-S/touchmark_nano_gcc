@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Source documents are internal working material and this repo is public.
+# Remove this line only if you intend to publish them.
+docs/
