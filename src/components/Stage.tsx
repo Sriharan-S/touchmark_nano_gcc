@@ -1,11 +1,11 @@
 "use client";
 
 import { useRef, type ReactNode } from "react";
-import type { Photo } from "@/lib/images";
+import type { Artwork } from "@/lib/images";
 import { gsap, useIsoLayoutEffect, prefersReducedMotion } from "@/lib/gsap";
 
 type Props = {
-  photo: Photo;
+  art: Artwork;
   children: ReactNode;
   /** Viewport height the stage occupies. */
   height?: string;
@@ -15,9 +15,9 @@ type Props = {
   className?: string;
 };
 
-/** Full-bleed photograph with type set over it. Used for page openings. */
+/** Full-bleed illustration with type set over it. Used for page openings. */
 export default function Stage({
-  photo,
+  art,
   children,
   height = "88svh",
   priority = false,
@@ -32,7 +32,7 @@ export default function Stage({
 
     const ctx = gsap.context(() => {
       gsap.to(el.querySelector(".stage-img"), {
-        yPercent: 12,
+        yPercent: 6,
         ease: "none",
         scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true },
       });
@@ -56,8 +56,8 @@ export default function Stage({
     <div className={`stage over ${className}`.trim()} ref={root} style={{ minHeight: height }}>
       <div className="stage-img">
         <img
-          src={photo.src}
-          alt={photo.alt}
+          src={art.src}
+          alt={art.alt}
           loading={priority ? "eager" : "lazy"}
           decoding={priority ? "sync" : "async"}
         />

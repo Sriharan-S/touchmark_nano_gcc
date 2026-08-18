@@ -9,7 +9,7 @@ import AnimatedHeading from "@/components/motion/AnimatedHeading";
 import Reveal from "@/components/motion/Reveal";
 import UnitDots from "@/components/motion/UnitDots";
 import Counter from "@/components/motion/Counter";
-import { PHOTOS } from "@/lib/images";
+import { ART } from "@/lib/images";
 
 
 export default function HomePage() {
@@ -122,13 +122,13 @@ export default function HomePage() {
               </div>
             </Reveal>
           </div>
-          <Figure photo={PHOTOS.college} shape="tall" />
+          <Figure art={ART.ideas} shape="tall" />
         </div>
       </Section>
 
       {/* Wide photograph of the technology corridor, full page width. */}
       <Section size="sm" rule={false}>
-        <Figure photo={PHOTOS.tidel} shape="wide" />
+        <Figure art={ART.team} shape="wide" />
       </Section>
 
       {/* Audiences as photographic panels - scanned visually, not read as a table. */}
@@ -141,7 +141,7 @@ export default function HomePage() {
               body: "Build capability in India without a large GCC from Day One.",
               href: "/for-companies",
               cta: "Build a Nano GCC",
-              photo: PHOTOS.tidel,
+              art: ART.team,
             },
             {
               n: "02",
@@ -149,7 +149,7 @@ export default function HomePage() {
               body: "Bring global industry exposure and GCC-readiness to campus.",
               href: "/for-institutions",
               cta: "Become a member",
-              photo: PHOTOS.college,
+              art: ART.ideas,
             },
             {
               n: "03",
@@ -157,7 +157,7 @@ export default function HomePage() {
               body: "Get on the radar for Nano GCC opportunities as they open.",
               href: "/careers",
               cta: "Register interest",
-              photo: PHOTOS.coast,
+              art: ART.global,
             },
           ]}
         />

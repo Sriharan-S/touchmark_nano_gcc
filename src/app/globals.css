@@ -138,11 +138,23 @@ a { color: inherit; text-decoration: none; }
 /* ---------- figures ---------- */
 
 .fig { margin: 0; position: relative; }
-.fig-frame { overflow: hidden; background: var(--paper-2); position: relative; }
-.fig-frame img { width: 100%; height: 100%; object-fit: cover; will-change: transform; }
-.fig-wide .fig-frame { aspect-ratio: 16 / 8; }
-.fig-tall .fig-frame { aspect-ratio: 3 / 4; }
-.fig-square .fig-frame { aspect-ratio: 1 / 1; }
+/* The art is vector illustration, not photography: it is contained inside the
+   frame with breathing room rather than cropped to fill it, and the frame
+   itself supplies the surface. */
+.fig-frame {
+  overflow: hidden; position: relative; border: 1px solid var(--rule);
+  background: radial-gradient(120% 120% at 30% 0%, var(--paper-3) 0%, var(--paper-2) 60%, var(--paper) 100%);
+}
+.fig-frame img {
+  /* Flat vector art turns crude when blown up to full page width, so the
+     drawing is capped and centred on the panel however wide the frame gets. */
+  width: 100%; height: 100%; object-fit: contain; will-change: transform;
+  max-width: min(100%, 720px); margin-inline: auto;
+  padding: clamp(18px, 3.4vw, 54px);
+}
+.fig-wide .fig-frame { aspect-ratio: 16 / 6; }
+.fig-tall .fig-frame { aspect-ratio: 5 / 4; }
+.fig-square .fig-frame { aspect-ratio: 4 / 3; }
 
 .fig figcaption {
   display: flex; gap: 14px; align-items: baseline; justify-content: space-between;
@@ -158,10 +170,22 @@ a { color: inherit; text-decoration: none; }
 
 .stage { position: relative; width: 100%; overflow: hidden; background: var(--paper); }
 .stage-img { position: absolute; inset: -8% 0; }
-.stage-img img { width: 100%; height: 100%; object-fit: cover; }
+.stage-img img {
+  width: 100%; height: 100%; object-fit: contain; object-position: 78% 62%;
+  padding: clamp(20px, 6vw, 90px);
+}
+/* The illustration is the quiet half of the composition - the type carries the
+   page, so the art sits to one side and never competes with it. */
+.stage::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: radial-gradient(90% 80% at 20% 40%, rgba(11, 20, 26, 0.96) 0%, rgba(11, 20, 26, 0.55) 45%, rgba(11, 20, 26, 0) 75%);
+}
+@media (max-width: 860px) {
+  .stage-img img { object-position: 50% 78%; }
+}
 .stage::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg, rgba(11,20,26,0.72) 0%, rgba(11,20,26,0.30) 34%, rgba(11,20,26,0.94) 100%);
+  background: linear-gradient(180deg, rgba(11,20,26,0.55) 0%, rgba(11,20,26,0.12) 34%, rgba(11,20,26,0.80) 100%);
 }
 /* Curved bottom vignette: a wide ellipse anchored off the bottom edge, so the
    darkening rises in the middle where the headline and copy sit and falls away
@@ -327,11 +351,14 @@ a.entry:hover .go { opacity: 1; transform: none; color: var(--seed); }
 
 .panels { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 1.6vw, 26px); }
 .panel { display: block; color: inherit; }
-.panel-img { position: relative; overflow: hidden; aspect-ratio: 4 / 3; background: var(--paper-2); }
+.panel-img {
+  position: relative; overflow: hidden; aspect-ratio: 4 / 3;
+  background: radial-gradient(120% 120% at 50% 0%, var(--paper-3) 0%, var(--paper-2) 70%);
+}
 .panel-img img {
-  width: 100%; height: 100%; object-fit: cover;
+  width: 100%; height: 100%; object-fit: contain; padding: clamp(16px, 2.4vw, 34px);
   transition: transform 0.85s var(--ease), filter 0.5s var(--ease);
-  filter: saturate(0.8) brightness(0.85);
+  filter: saturate(0.85) brightness(0.92);
 }
 .panel:hover .panel-img img { transform: scale(1.05); filter: saturate(1) brightness(1); }
 .panel-n {

@@ -6,7 +6,7 @@ import Figure from "@/components/Figure";
 import PullQuote from "@/components/PullQuote";
 import AnimatedHeading from "@/components/motion/AnimatedHeading";
 import Reveal from "@/components/motion/Reveal";
-import { PHOTOS } from "@/lib/images";
+import { ART } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "About & Vision",
@@ -18,7 +18,7 @@ export default function AboutPage() {
   return (
     <>
       {/* This page opens on a photograph; the model page opens on type. */}
-      <Stage photo={PHOTOS.coast} priority height="72svh">
+      <Stage art={ART.global} priority height="72svh">
         <div
           className="page"
           style={{
@@ -100,7 +100,7 @@ export default function AboutPage() {
 
       <Section index="06" label="Why Tamil Nadu" note="Talent, institutions, innovation">
         <div className="ed-tall flip">
-          <Figure photo={PHOTOS.campus} shape="square" />
+          <Figure art={ART.knowledge} shape="square" />
           <div>
             <AnimatedHeading as="h2" className="display d-md">
               Made legible, and <em>accessible</em>.

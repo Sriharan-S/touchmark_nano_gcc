@@ -1,11 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-import type { Photo } from "@/lib/images";
+import type { Artwork } from "@/lib/images";
 import { gsap, useIsoLayoutEffect, prefersReducedMotion } from "@/lib/gsap";
 
 type Props = {
-  photo: Photo;
+  art: Artwork;
   /** Frame proportion. */
   shape?: "wide" | "tall" | "square";
   /** Override the caption text; the credit line is always kept. */
@@ -15,14 +15,14 @@ type Props = {
 };
 
 /**
- * A captioned photograph.
+ * A captioned illustration.
  *
- * The image is over-scaled inside its frame and drifts as the frame passes
- * through the viewport, so photography feels anchored to the page rather than
- * pasted onto it. The credit is mandatory - these are CC BY / CC BY-SA files.
+ * The art is contained rather than cropped, so it drifts gently instead of
+ * being over-scaled - scaling vector art up to 1.14 would push it out of its
+ * own frame and clip the figures.
  */
 export default function Figure({
-  photo,
+  art,
   shape = "wide",
   caption,
   priority = false,
@@ -45,10 +45,10 @@ export default function Figure({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         img,
-        { yPercent: -7, scale: 1.14 },
+        { yPercent: -3.5, scale: 1 },
         {
-          yPercent: 7,
-          scale: 1.14,
+          yPercent: 3.5,
+          scale: 1,
           ease: "none",
           scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
         }
@@ -70,16 +70,16 @@ export default function Figure({
     <figure ref={root} className={`fig fig-${shape} ${className ?? ""}`}>
       <div className="fig-frame">
         <img
-          src={photo.src}
-          alt={photo.alt}
+          src={art.src}
+          alt={art.alt}
           loading={priority ? "eager" : "lazy"}
           decoding={priority ? "sync" : "async"}
         />
       </div>
       <figcaption>
-        <span className="cap">{caption ?? photo.caption}</span>
+        <span className="cap">{caption ?? art.caption}</span>
         <span className="cred">
-          {photo.credit} · {photo.licence}
+          {art.credit} · {art.licence}
         </span>
       </figcaption>
     </figure>

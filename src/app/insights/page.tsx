@@ -7,7 +7,7 @@ import Entries from "@/components/Entries";
 import PullQuote from "@/components/PullQuote";
 import AnimatedHeading from "@/components/motion/AnimatedHeading";
 import Reveal from "@/components/motion/Reveal";
-import { PHOTOS } from "@/lib/images";
+import { ART } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Insights & Stories",
@@ -62,7 +62,7 @@ export default function InsightsPage() {
       </Section>
 
       <Section size="sm" rule={false}>
-        <Figure photo={PHOTOS.coast} shape="wide" />
+        <Figure art={ART.global} shape="wide" />
       </Section>
 
       {/* Anonymization is a rule from the source document, so it is stated. */}

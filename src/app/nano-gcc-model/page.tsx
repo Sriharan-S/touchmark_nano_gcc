@@ -10,7 +10,7 @@ import Figure from "@/components/Figure";
 import AnimatedHeading from "@/components/motion/AnimatedHeading";
 import Reveal from "@/components/motion/Reveal";
 import Entries from "@/components/Entries";
-import { PHOTOS } from "@/lib/images";
+import { ART } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "The Nano GCC Model",
@@ -105,7 +105,7 @@ export default function ModelPage() {
       </Section>
 
       <Section size="sm" rule={false}>
-        <Figure photo={PHOTOS.tidel} shape="wide" />
+        <Figure art={ART.team} shape="wide" />
       </Section>
 
       <Section index="07" label="Succeed or exit" note="Either outcome stays cheap" size="lg">

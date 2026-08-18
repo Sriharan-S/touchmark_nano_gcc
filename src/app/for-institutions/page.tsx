@@ -5,7 +5,7 @@ import Section from "@/components/Section";
 import Datasheet from "@/components/Datasheet";
 import AnimatedHeading from "@/components/motion/AnimatedHeading";
 import Reveal from "@/components/motion/Reveal";
-import { PHOTOS } from "@/lib/images";
+import { ART } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "For Institutions",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function ForInstitutionsPage() {
   return (
     <>
-      <Stage photo={PHOTOS.campus} priority height="76svh">
+      <Stage art={ART.knowledge} priority height="76svh">
         <div
           className="page"
           style={{

@@ -7,7 +7,7 @@ import Entries from "@/components/Entries";
 import PullQuote from "@/components/PullQuote";
 import AnimatedHeading from "@/components/motion/AnimatedHeading";
 import Reveal from "@/components/motion/Reveal";
-import { PHOTOS } from "@/lib/images";
+import { ART } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "For Companies",
@@ -30,7 +30,7 @@ export default function ForCompaniesPage() {
       />
 
       <Section size="sm" rule={false}>
-        <Figure photo={PHOTOS.tidel} shape="wide" priority />
+        <Figure art={ART.team} shape="wide" priority />
       </Section>
 
       <Section index="05" label="How it works" note="Three steps">

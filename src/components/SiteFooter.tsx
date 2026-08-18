@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FOOTER_LINKS } from "@/lib/nav";
-import { ALL_PHOTOS } from "@/lib/images";
 import Logo from "./Logo";
 
 export default function SiteFooter() {
@@ -52,24 +51,17 @@ export default function SiteFooter() {
         </div>
 
         {/*
-          CC BY and CC BY-SA require attribution, so the credits are part of the
-          page rather than a buried file. The disclaimer matters: these are
-          photographs of public landmarks, not of partner organizations.
+          unDraw's licence asks for nothing, but naming the source is honest and
+          costs a line. The disclaimer is gone with the photography it was for -
+          the site no longer pictures any real organization.
         */}
         <div className="credits">
-          <div style={{ marginBottom: 8 }}>
-            Photography depicts Tamil Nadu&rsquo;s public landmarks and institutional landscape. It
-            does not indicate that any pictured organization is a partner of Touchmark.
-          </div>
-          {ALL_PHOTOS.map((p) => (
-            <div key={p.src}>
-              {p.caption} - <a href={p.sourceUrl}>{p.credit}</a>, via Wikimedia Commons,{" "}
-              <a href={p.licenceUrl}>{p.licence}</a>
-            </div>
-          ))}
+          Illustrations from <a href="https://undraw.co">unDraw</a>, recoloured to the Touchmark
+          palette. Free for commercial use under the{" "}
+          <a href="https://undraw.co/license">unDraw licence</a>.
         </div>
 
-        <div className="foot-bot">
+<div className="foot-bot">
           <span>&copy; {new Date().getFullYear()} Touchmark Nano GCC Hub</span>
           <span>Built from Tamil Nadu, for the world</span>
         </div>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRef } from "react";
-import type { Photo } from "@/lib/images";
+import type { Artwork } from "@/lib/images";
 import { gsap, useIsoLayoutEffect, prefersReducedMotion } from "@/lib/gsap";
 
 export type Panel = {
@@ -11,7 +11,7 @@ export type Panel = {
   body: string;
   href: string;
   cta: string;
-  photo: Photo;
+  art: Artwork;
 };
 
 /**
@@ -49,7 +49,7 @@ export default function AudiencePanels({ items }: { items: Panel[] }) {
       {items.map((it) => (
         <Link className="panel" href={it.href} key={it.n}>
           <div className="panel-img">
-            <img src={it.photo.src} alt={it.photo.alt} loading="lazy" decoding="async" />
+            <img src={it.art.src} alt={it.art.alt} loading="lazy" decoding="async" />
             <span className="panel-n">{it.n}</span>
           </div>
           <div className="panel-body">

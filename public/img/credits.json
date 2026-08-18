@@ -1,52 +1,52 @@
 [
   {
-    "slug": "chennai-skyline",
-    "file": "/img/chennai-skyline.jpg",
-    "source": "Wikimedia Commons",
-    "title": "Chennai-Skyline-from-Mount",
-    "artist": "Karthikeyan321",
-    "licence": "CC BY 4.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
-    "pageUrl": "https://commons.wikimedia.org/wiki/File:Chennai-Skyline-from-Mount.jpg"
+    "slug": "il-network",
+    "file": "/img/il-network.svg",
+    "source": "unDraw",
+    "title": "Connected world",
+    "licence": "unDraw licence",
+    "licenceUrl": "https://undraw.co/license",
+    "pageUrl": "https://undraw.co/illustrations",
+    "note": "Recoloured to the Touchmark palette."
   },
   {
-    "slug": "tidel-park",
-    "file": "/img/tidel-park.jpg",
-    "source": "Wikimedia Commons",
-    "title": "Tidel park, Chennai",
-    "artist": "Shanmugamp7",
-    "licence": "CC BY-SA 4.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "pageUrl": "https://commons.wikimedia.org/wiki/File:Tidel_park,_Chennai.jpg"
+    "slug": "il-engineering-team",
+    "file": "/img/il-engineering-team.svg",
+    "source": "unDraw",
+    "title": "Engineering team",
+    "licence": "unDraw licence",
+    "licenceUrl": "https://undraw.co/license",
+    "pageUrl": "https://undraw.co/illustrations",
+    "note": "Recoloured to the Touchmark palette."
   },
   {
-    "slug": "iit-madras",
-    "file": "/img/iit-madras.jpg",
-    "source": "Wikimedia Commons",
-    "title": "Hostels East IIT Madras Jun23 A7C 05191",
-    "artist": "This Photo was taken by Timothy A. Gonsalves.  Feel free to use my photos, but please mention me as the author.  I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page, for my information.  Please contact me before commercial use.\n\n\n\nPlease do not upload an edited image here without consulting me.  I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved.Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract.",
-    "licence": "CC BY-SA 4.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "pageUrl": "https://commons.wikimedia.org/wiki/File:Hostels_East_IIT_Madras_Jun23_A7C_05191.jpg"
+    "slug": "il-knowledge",
+    "file": "/img/il-knowledge.svg",
+    "source": "unDraw",
+    "title": "Sharing knowledge",
+    "licence": "unDraw licence",
+    "licenceUrl": "https://undraw.co/license",
+    "pageUrl": "https://undraw.co/illustrations",
+    "note": "Recoloured to the Touchmark palette."
   },
   {
-    "slug": "anna-university",
-    "file": "/img/anna-university.jpg",
-    "source": "Wikimedia Commons",
-    "title": "Anna+University",
-    "artist": "Sriramramani",
-    "licence": "CC BY-SA 3.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "pageUrl": "https://commons.wikimedia.org/wiki/File:Anna%2BUniversity.JPG"
+    "slug": "il-ideas",
+    "file": "/img/il-ideas.svg",
+    "source": "unDraw",
+    "title": "Ideas flow",
+    "licence": "unDraw licence",
+    "licenceUrl": "https://undraw.co/license",
+    "pageUrl": "https://undraw.co/illustrations",
+    "note": "Recoloured to the Touchmark palette."
   },
   {
-    "slug": "marina-aerial",
-    "file": "/img/marina-aerial.jpg",
-    "source": "Wikimedia Commons",
-    "title": "Marina beach, Chennai aerial view",
-    "artist": "Saiphani02",
-    "licence": "CC BY-SA 4.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "pageUrl": "https://commons.wikimedia.org/wiki/File:Marina_beach,_Chennai_aerial_view.jpg"
+    "slug": "il-global",
+    "file": "/img/il-global.svg",
+    "source": "unDraw",
+    "title": "Fast-changing world",
+    "licence": "unDraw licence",
+    "licenceUrl": "https://undraw.co/license",
+    "pageUrl": "https://undraw.co/illustrations",
+    "note": "Recoloured to the Touchmark palette."
   }
 ]
