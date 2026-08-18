@@ -4,13 +4,18 @@ export type NavItem = {
   sub?: { href: string; label: string }[];
 };
 
-/** Primary navigation — the 8 pages from the content structure. */
+/**
+ * Header navigation.
+ *
+ * Eight items crowded the bar, so Home and Contact come out: the logo is the
+ * home link and the header CTA goes to Contact. Every page is still reachable
+ * from the footer. The "For " prefixes are dropped to buy back width.
+ */
 export const NAV: NavItem[] = [
-  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/nano-gcc-model", label: "Nano GCC Model" },
-  { href: "/for-companies", label: "For Companies" },
-  { href: "/for-institutions", label: "For Institutions" },
+  { href: "/for-companies", label: "Companies" },
+  { href: "/for-institutions", label: "Institutions" },
   {
     href: "/ecosystem",
     label: "Ecosystem",
@@ -20,7 +25,6 @@ export const NAV: NavItem[] = [
     ],
   },
   { href: "/insights", label: "Insights" },
-  { href: "/contact", label: "Contact" },
 ];
 
 /** Supporting pages, reachable from the footer. */

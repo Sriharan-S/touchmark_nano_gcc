@@ -14,8 +14,11 @@ type Props = {
 };
 
 /**
- * Splits a heading into lines and sweeps each one up from behind a mask.
- * Re-splits automatically on resize, and no-ops under reduced motion.
+ * Reveals a heading line by line on scroll.
+ *
+ * Deliberately NOT using SplitText's `mask` option: the mask wrapper clips at
+ * the line box, which cuts the descenders off g, y, j and p. Lines fade and
+ * rise instead, so nothing is ever clipped.
  */
 export default function AnimatedHeading({
   as: Tag = "h2",
@@ -40,15 +43,14 @@ export default function AnimatedHeading({
       ctx = gsap.context(() => {
         split = SplitText.create(el, {
           type: "lines",
-          mask: "lines",
           autoSplit: true,
           onSplit(self) {
             return gsap.from(self.lines, {
-              yPercent: 120,
+              y: 26,
               opacity: 0,
-              duration: 1.05,
-              ease: "power4.out",
-              stagger: 0.09,
+              duration: 1,
+              ease: "expo.out",
+              stagger: 0.085,
               delay,
               scrollTrigger: { trigger: el, start, once: true },
             });

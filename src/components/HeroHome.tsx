@@ -58,7 +58,7 @@ export default function HeroHome() {
 
           <h1 className="display d-xl" style={{ maxWidth: "13ch" }}>
             {LINES.map((l) => (
-              <span className="hl" key={l.text} style={{ display: "block", overflow: "hidden" }}>
+              <span className="hl" key={l.text}>
                 <span
                   style={{
                     display: "block",

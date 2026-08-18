@@ -7,12 +7,23 @@ Next.js (App Router) + TypeScript, statically exported. Scroll motion is GSAP
     npm run build      # static export to ./out
     npm run typecheck  # tsc --noEmit
 
-Every route prerenders to plain HTML in `out/`, hostable on any static host.
+Every route prerenders to plain HTML in `out/`.
+
+## Deployment
+
+Vercel, from `main`. `next.config.ts` uses `output: "export"` and the site is
+served from the domain root, so there is no `basePath` — if it is ever hosted
+under a subpath, image `src` values in `src/lib/images.ts` need prefixing too,
+because Next does not rewrite plain `<img src>`.
 
 ## Design
 
-**Typography and palette** are unchanged from the previous version:
-Instrument Serif (display) · IBM Plex Mono (metadata) · Inter (body), on warm
+**Typography** is Fraunces (display, 500/600) + Inter (body and labels) — the
+pairing from the original HTML version. Labels are Inter uppercase at weight
+700; there is no monospace. The `--mono` variable keeps its name so existing
+call sites work, but it points at Inter.
+
+The palette is warm
 paper `#F0EDE5` and ink `#0E1A24`, with two signal colours that mean one thing
 each and are used nowhere else:
 
@@ -91,11 +102,25 @@ From `docs/Touchmark_Website_Copy_v2.docx`:
 - **Brochure buttons** point at `/contact` — no PDFs exist yet.
 - **Tamil-language toggle** is scoped as a v2 addition in the source document.
 
-## Known gaps
+## Scaling and responsiveness
 
-Narrow-viewport rendering is **unverified** — the test browser could not be
-resized below its minimum. Breakpoints exist (900px column collapse, 1400px nav
-collapse, 760px journey stack) but have not been seen on a real phone.
+The root font size scales with the viewport
+(`clamp(16px, 0.3125vw + 12px, 20px)`), so everything sized in rem grows on
+large displays instead of stranding the page mid-screen. The container is
+`min(1920px, 94vw)`.
+
+Breakpoints: 1080px nav collapses to a menu, 900px editorial columns stack,
+760px the journey stacks, 700px and 420px mobile refinements.
+
+Verified at 390px and 768px by rendering the site inside an iframe of that
+width — an iframe gets its own viewport, so media queries evaluate correctly.
+The test browser itself could not be resized. No horizontal overflow at 390px.
+
+**Descenders:** headings must never sit inside an unpadded `overflow: hidden`
+wrapper. Fraunces has deep descenders and SplitText's `mask` option clips at the
+line box, cutting g, y and j. `AnimatedHeading` therefore fades lines up instead
+of masking them, and the hero's `.hl` mask carries `padding-bottom` so the clip
+region includes the descenders.
 
 If the dev server ever serves a page with no CSS, its cache is stale: stop it,
 `rm -rf .next`, and restart.

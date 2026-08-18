@@ -2,7 +2,6 @@
 
 import { useRef, type ReactNode } from "react";
 import type { Photo } from "@/lib/images";
-import { asset } from "@/lib/asset";
 import { gsap, useIsoLayoutEffect, prefersReducedMotion } from "@/lib/gsap";
 
 type Props = {
@@ -36,7 +35,7 @@ export default function Stage({ photo, children, height = "88svh", priority = fa
     <div className="stage over" ref={root} style={{ minHeight: height }}>
       <div className="stage-img">
         <img
-          src={asset(photo.src)}
+          src={photo.src}
           alt={photo.alt}
           loading={priority ? "eager" : "lazy"}
           decoding={priority ? "sync" : "async"}

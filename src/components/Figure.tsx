@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import type { Photo } from "@/lib/images";
-import { asset } from "@/lib/asset";
 import { gsap, useIsoLayoutEffect, prefersReducedMotion } from "@/lib/gsap";
 
 type Props = {
@@ -71,7 +70,7 @@ export default function Figure({
     <figure ref={root} className={`fig fig-${shape} ${className ?? ""}`}>
       <div className="fig-frame">
         <img
-          src={asset(photo.src)}
+          src={photo.src}
           alt={photo.alt}
           loading={priority ? "eager" : "lazy"}
           decoding={priority ? "sync" : "async"}

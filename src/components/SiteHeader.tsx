@@ -73,12 +73,11 @@ export default function SiteHeader() {
         </button>
 
         <nav id="primary-nav" className={`nav${open ? " open" : ""}`} aria-label="Primary">
-          {NAV.map((item, i) => {
-            const n = String(i + 1).padStart(2, "0");
-            return item.sub ? (
+          {NAV.map((item) =>
+            item.sub ? (
               <span className="has-sub" key={item.href}>
                 <Link href={item.href} className={isOn(item.href) ? "on" : undefined}>
-                  {n} {item.label}
+                  {item.label}
                 </Link>
                 <span className="sub">
                   {item.sub.map((s) => (
@@ -90,10 +89,10 @@ export default function SiteHeader() {
               </span>
             ) : (
               <Link key={item.href} href={item.href} className={isOn(item.href) ? "on" : undefined}>
-                {n} {item.label}
+                {item.label}
               </Link>
-            );
-          })}
+            )
+          )}
         </nav>
 
         <Link href="/contact" className="act primary head-cta" style={{ padding: "10px 16px" }}>
