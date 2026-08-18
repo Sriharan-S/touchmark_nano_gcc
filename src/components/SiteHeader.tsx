@@ -48,8 +48,9 @@ export default function SiteHeader() {
     <header className={`head${solid ? " solid" : ""}${overImage ? " over-image" : ""}`}>
       <div className="head-in">
         <Link href="/" className="brand" aria-label="Touchmark Nano GCC Hub — home">
-          {/* White lockup while the header sits on a photograph. */}
-          <Logo variant={overImage && !solid ? "white" : "color"} />
+          {/* The site is dark throughout, so the white lockup is used everywhere;
+              the colour version's navy "DESCIENCE" would disappear. */}
+          <Logo variant="white" />
           <span className="brand-txt">Nano GCC Hub</span>
         </Link>
 

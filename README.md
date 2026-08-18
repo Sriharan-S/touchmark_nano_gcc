@@ -23,9 +23,11 @@ pairing from the original HTML version. Labels are Inter uppercase at weight
 700; there is no monospace. The `--mono` variable keeps its name so existing
 call sites work, but it points at Inter.
 
-The palette is warm
-paper `#F0EDE5` and ink `#0E1A24`, with two signal colours that mean one thing
-each and are used nowhere else:
+**The site is dark-first.** The base is a deep petrol ink rather than an
+off-white, because near-white read as generic. Depth comes from raised panels
+(`--paper-2`, `--paper-3`, `--panel`) rather than alternating light and dark
+bands, and photography carries the brightness. Two signal colours mean one
+thing each and are used nowhere else:
 
     --seed   #0F8F8F   the starting unit / active stage
     --proven #E29A2C   capability added once the model is proven
@@ -95,8 +97,8 @@ pictured institution, update the caption — don't imply it earlier.
     src/lib/nav.ts           navigation structure
     src/lib/gsap.ts          plugin registration + reduced-motion helper
 
-`UnitPulse` runs continuously in the hero: five teal units appear, the rest fill
-in amber, it holds, resets and repeats — the proposition on a loop.
+`CapabilityRotator` runs continuously in the hero: the capability areas cycle
+through a masked window with a timer bar, saying what units get built for.
 `UnitDots` is the same motif at full scale: 100 dots, 5 teal seed, the rest
 filling amber on scroll. `JourneyScroller` pins and moves the five stages sideways, each carrying
 its own unit count so the team visibly grows only at the proven stage.
@@ -107,6 +109,23 @@ Every motion primitive checks `prefers-reduced-motion` and renders static.
 
 `.jstep` is sized in `vw`, not px, so the track stays ~1.7x the viewport. A fixed
 px width collapsed the horizontal travel to nothing on wide displays.
+
+## The Nano GCC Model page
+
+Two purpose-built pieces rather than generic sections:
+
+- **`ScaleSimulator`** — drag team size 5 to 100 and the unit shape, the dot
+  field and two opposed meters (commitment up, speed to first answer down)
+  all move. The document's central claim, made testable instead of asserted.
+- **`JourneyRail`** — the five stages as a sticky numeral and tick track beside
+  a scrolling narrative. Replaced the pinned horizontal carousel, which needed
+  separate desktop and mobile behaviour and hid the reader's position.
+
+## Forms
+
+Fields are filled wells with borders, placeholders and required markers.
+An earlier version used borderless underline inputs, which left users unsure
+where to type — **do not go back to invisible fields.**
 
 ## Content rules encoded in the build
 

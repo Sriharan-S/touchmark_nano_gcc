@@ -44,8 +44,8 @@ export default function CareersPage() {
               submitLabel="Register your interest"
               successMessage="Registered. We'll reach out if a matching Nano GCC requirement opens up."
               fields={[
-                { kind: "text", name: "name", label: "Name", required: true },
-                { kind: "text", name: "email", label: "Email", type: "email", required: true },
+                { kind: "text", name: "name", label: "Name", required: true, placeholder: "Your full name" },
+                { kind: "text", name: "email", label: "Email", type: "email", required: true, placeholder: "you@email.com" },
                 {
                   kind: "select",
                   name: "area",
@@ -60,7 +60,7 @@ export default function CareersPage() {
                     "Other",
                   ],
                 },
-                { kind: "textarea", name: "message", label: "Tell us about your interest" },
+                { kind: "textarea", name: "message", label: "Tell us about your interest", placeholder: "Where you have worked, what you would want to build" },
               ]}
             />
           </Reveal>

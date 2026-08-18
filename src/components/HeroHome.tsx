@@ -6,7 +6,7 @@ import { gsap, useIsoLayoutEffect, prefersReducedMotion } from "@/lib/gsap";
 import { PHOTOS } from "@/lib/images";
 import Stage from "./Stage";
 import Counter from "./motion/Counter";
-import UnitPulse from "./motion/UnitPulse";
+import CapabilityRotator from "./motion/CapabilityRotator";
 
 const LINES = [
   { text: "Start small.", em: false },
@@ -71,7 +71,7 @@ export default function HeroHome() {
               Center.
             </p>
 
-            <UnitPulse />
+            <CapabilityRotator />
 
             <div className="acts hero-acts">
               <Link href="/nano-gcc-model" className="act primary">

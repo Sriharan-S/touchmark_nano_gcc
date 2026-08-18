@@ -74,9 +74,9 @@ export default function ContactPage() {
               submitLabel="Submit & start a conversation"
               successMessage="Received. We'll be in touch shortly to start the conversation."
               fields={[
-                { kind: "text", name: "name", label: "Name", required: true },
-                { kind: "text", name: "organization", label: "Organization", required: true },
-                { kind: "text", name: "email", label: "Email", type: "email", required: true },
+                { kind: "text", name: "name", label: "Name", required: true, placeholder: "Your full name" },
+                { kind: "text", name: "organization", label: "Organization", required: true, placeholder: "Company or institution" },
+                { kind: "text", name: "email", label: "Email", type: "email", required: true, placeholder: "you@company.com" },
                 {
                   kind: "select",
                   name: "type",
@@ -99,7 +99,7 @@ export default function ContactPage() {
                     "Other",
                   ],
                 },
-                { kind: "textarea", name: "message", label: "Message" },
+                { kind: "textarea", name: "message", label: "Message", placeholder: "What are you trying to build, and what would you like to find out?" },
               ]}
             />
           </Reveal>

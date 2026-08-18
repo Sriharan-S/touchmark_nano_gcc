@@ -4,9 +4,9 @@ import { useRef, useState, type FormEvent } from "react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 type Field =
-  | { kind: "text"; name: string; label: string; type?: string; required?: boolean }
+  | { kind: "text"; name: string; label: string; type?: string; required?: boolean; placeholder?: string }
   | { kind: "select"; name: string; label: string; options: string[]; required?: boolean }
-  | { kind: "textarea"; name: string; label: string; required?: boolean };
+  | { kind: "textarea"; name: string; label: string; required?: boolean; placeholder?: string };
 
 type Props = { fields: Field[]; submitLabel: string; successMessage: string };
 
@@ -43,15 +43,24 @@ export default function EnquiryForm({ fields, submitLabel, successMessage }: Pro
         </div>
       )}
 
+      <p className="form-hint">All fields marked with an asterisk are required</p>
+
       <div className="form-grid">
-        {fields.map((f, i) => (
+        {fields.map((f) => (
           <div className="field" key={f.name}>
             <label htmlFor={f.name}>
-              {String(i + 1).padStart(2, "0")} — {f.label}
+              {f.label}
+              {f.required && <span style={{ color: "var(--seed)" }}> *</span>}
             </label>
 
             {f.kind === "text" && (
-              <input id={f.name} name={f.name} type={f.type ?? "text"} required={f.required} />
+              <input
+                id={f.name}
+                name={f.name}
+                type={f.type ?? "text"}
+                required={f.required}
+                placeholder={f.placeholder}
+              />
             )}
 
             {f.kind === "select" && (
@@ -65,7 +74,14 @@ export default function EnquiryForm({ fields, submitLabel, successMessage }: Pro
               </select>
             )}
 
-            {f.kind === "textarea" && <textarea id={f.name} name={f.name} required={f.required} />}
+            {f.kind === "textarea" && (
+              <textarea
+                id={f.name}
+                name={f.name}
+                required={f.required}
+                placeholder={f.placeholder}
+              />
+            )}
           </div>
         ))}
       </div>

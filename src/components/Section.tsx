@@ -78,7 +78,7 @@ export default function Section({
             </div>
             {note && (
               <div
-                className="index"
+                className="index sec-note"
                 style={{ textAlign: "right", justifyContent: "flex-end" }}
               >
                 {note}
