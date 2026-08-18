@@ -10,10 +10,20 @@ type Props = {
   /** Viewport height the stage occupies. */
   height?: string;
   priority?: boolean;
+  /** Curved bottom vignette that fades out as the stage scrolls away. */
+  vignette?: boolean;
+  className?: string;
 };
 
 /** Full-bleed photograph with type set over it. Used for page openings. */
-export default function Stage({ photo, children, height = "88svh", priority = false }: Props) {
+export default function Stage({
+  photo,
+  children,
+  height = "88svh",
+  priority = false,
+  vignette = false,
+  className = "",
+}: Props) {
   const root = useRef<HTMLDivElement>(null);
 
   useIsoLayoutEffect(() => {
@@ -26,13 +36,24 @@ export default function Stage({ photo, children, height = "88svh", priority = fa
         ease: "none",
         scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true },
       });
+
+      // The vignette only earns its keep while the headline is on screen, so
+      // it dissolves over the first half of the scroll out.
+      const veil = el.querySelector(".stage-veil");
+      if (veil) {
+        gsap.to(veil, {
+          opacity: 0,
+          ease: "none",
+          scrollTrigger: { trigger: el, start: "top top", end: "45% top", scrub: true },
+        });
+      }
     }, el);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div className="stage over" ref={root} style={{ minHeight: height }}>
+    <div className={`stage over ${className}`.trim()} ref={root} style={{ minHeight: height }}>
       <div className="stage-img">
         <img
           src={photo.src}
@@ -41,6 +62,7 @@ export default function Stage({ photo, children, height = "88svh", priority = fa
           decoding={priority ? "sync" : "async"}
         />
       </div>
+      {vignette ? <div className="stage-veil" aria-hidden /> : null}
       <div className="stage-body">{children}</div>
     </div>
   );

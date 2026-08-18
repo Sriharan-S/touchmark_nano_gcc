@@ -163,6 +163,21 @@ a { color: inherit; text-decoration: none; }
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(180deg, rgba(11,20,26,0.72) 0%, rgba(11,20,26,0.30) 34%, rgba(11,20,26,0.94) 100%);
 }
+/* Curved bottom vignette: a wide ellipse anchored off the bottom edge, so the
+   darkening rises in the middle where the headline and copy sit and falls away
+   at the corners instead of reading as a flat band. */
+.stage-veil {
+  content: ""; position: absolute; z-index: 1; pointer-events: none;
+  left: -12%; right: -12%; bottom: -2px; height: 66%;
+  background: radial-gradient(
+    118% 100% at 50% 100%,
+    rgba(6, 12, 17, 0.92) 0%,
+    rgba(6, 12, 17, 0.78) 34%,
+    rgba(6, 12, 17, 0.42) 62%,
+    rgba(6, 12, 17, 0.12) 82%,
+    rgba(6, 12, 17, 0) 100%
+  );
+}
 .stage-body { position: relative; z-index: 2; }
 .over { color: var(--ink-2); }
 .over .display { color: #fff; }
@@ -187,16 +202,23 @@ a { color: inherit; text-decoration: none; }
 .hl > span { display: block; }
 
 /* Rotating capability line — the hero's continuous animation. */
-.rotator { display: flex; flex-direction: column; gap: 10px; min-width: clamp(210px, 24vw, 330px); }
+.rotator { display: flex; flex-direction: column; gap: 10px; min-width: clamp(240px, 28vw, 400px); }
 .rotator-label {
   font-family: var(--mono); font-weight: 700; font-size: 0.6rem;
   letter-spacing: 0.18em; text-transform: uppercase; color: var(--seed);
 }
-.rotator-window { position: relative; height: 3.1em; overflow: hidden; }
+/* The window sets the item font-size itself, so its em-based height is measured
+   in the same units the lines are - otherwise two lines of a larger font
+   overflow a height sized in the parent's smaller em and get clipped. */
+.rotator-window {
+  position: relative; overflow: hidden;
+  font-family: var(--display); font-size: clamp(0.98rem, 1.35vw, 1.35rem);
+  height: calc(2 * 1.3em + 0.36em);
+}
 .rotator-item {
-  position: absolute; inset: 0; display: flex; align-items: center;
-  font-family: var(--display); font-weight: 600;
-  font-size: clamp(0.98rem, 1.35vw, 1.35rem); line-height: 1.2;
+  position: absolute; inset: 0; display: flex; align-items: flex-start;
+  padding-block: 0.18em; font-weight: 600;
+  font-size: inherit; line-height: 1.3; text-wrap: balance;
   letter-spacing: -0.015em; color: #fff;
 }
 .rotator-bar { height: 1px; background: rgba(255, 255, 255, 0.22); position: relative; overflow: hidden; }
@@ -673,7 +695,7 @@ a.entry:hover .go { opacity: 1; transform: none; color: var(--seed); }
   .hero-copy { font-size: 0.86rem; max-width: none; }
   .d-hero { font-size: clamp(1.7rem, 7.2vw, 2.4rem); }
   .rotator { min-width: 0; gap: 7px; }
-  .rotator-window { height: 2.8em; }
+  .rotator-window { font-size: clamp(0.95rem, 3.6vw, 1.1rem); height: calc(2 * 1.3em + 0.36em); }
   .hero-specs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 10px; }
   .hero-specs .spec:nth-child(n + 3) { display: none; }
   .hero-specs .spec b { font-size: 1.05rem; margin-top: 4px; }

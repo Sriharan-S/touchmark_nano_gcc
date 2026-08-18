@@ -57,7 +57,7 @@ export default function HeroHome() {
     <div ref={root}>
       {/* The stage is exactly one viewport tall and the headline is capped in
           vh as well as vw, so the hero never runs off the bottom of the screen. */}
-      <Stage photo={PHOTOS.chennai} priority height="100svh">
+      <Stage photo={PHOTOS.chennai} priority height="100svh" vignette className="stage-hero">
         <div className="page hero-inner">
           <div className="index hero-index">
             <b>Touchmark Nano GCC Hub</b>
