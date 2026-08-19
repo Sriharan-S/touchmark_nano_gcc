@@ -18,19 +18,21 @@ because Next does not rewrite plain `<img src>`.
 
 ## Design
 
-**Typography** is Fraunces (display, 500/600) + Inter (body and labels) — the
-pairing from the original HTML version. Labels are Inter uppercase at weight
-700; there is no monospace. The `--mono` variable keeps its name so existing
-call sites work, but it points at Inter.
+**Typography** is Poppins throughout — headings, body, labels and UI — following
+the reference site the brand chose. Labels are Poppins uppercase at weight 700;
+there is no monospace and no serif. The `--mono` and `--display` variables keep
+their names so existing call sites work, but both point at Poppins; `--display`
+now carries only the heading scale, weight and tracking.
 
-**The site is dark-first.** The base is a deep petrol ink rather than an
-off-white, because near-white read as generic. Depth comes from raised panels
-(`--paper-2`, `--paper-3`, `--panel`) rather than alternating light and dark
-bands, and photography carries the brightness. Two signal colours mean one
-thing each and are used nowhere else:
+**The site is light-first.** White and warm neutral surfaces (`--paper`,
+`--paper-2`, `--paper-3`) carry the pages, and a deep navy (`--panel`) carries
+the accent bands, the footer, the hero stages and the figure panels. Those navy
+contexts re-point the ink and rule tokens rather than restating every rule, so
+anything reading `--ink` or `--rule` flips with them. Two signal colours mean
+one thing each and are used nowhere else:
 
-    --seed   #0F8F8F   the starting unit / active stage
-    --proven #E29A2C   capability added once the model is proven
+    --seed   #0F5E86  (#54B9F2 on navy)   the starting unit / active stage
+    --proven #9E480A  (#FCA442 on navy)   capability added once proven
 
 **The layout is editorial.** Full-bleed photography, uneven column widths, pull
 quotes that break the measure, and section shapes that deliberately differ from
