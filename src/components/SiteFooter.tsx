@@ -63,6 +63,13 @@ export default function SiteFooter() {
 
 <div className="foot-bot">
           <span>&copy; {new Date().getFullYear()} Touchmark Nano GCC Hub</span>
+          <span className="foot-legal">
+            {FOOTER_LINKS.legal.map((l) => (
+              <Link key={l.href} href={l.href}>
+                {l.label}
+              </Link>
+            ))}
+          </span>
           <span>Built from Tamil Nadu, for the world</span>
         </div>
       </div>

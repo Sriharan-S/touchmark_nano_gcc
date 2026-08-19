@@ -18,6 +18,8 @@ const ROUTES = [
   { path: "/faq", priority: 0.6 },
   { path: "/careers", priority: 0.6 },
   { path: "/contact", priority: 0.8 },
+  { path: "/terms", priority: 0.3 },
+  { path: "/privacy", priority: 0.3 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

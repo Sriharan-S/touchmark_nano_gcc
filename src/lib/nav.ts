@@ -46,4 +46,9 @@ export const FOOTER_LINKS = {
     { href: "/ecosystem/partners", label: "Partners" },
     { href: "/ecosystem/team", label: "Team & Advisory" },
   ],
+  /** Sits in the footer's bottom bar rather than the columns. */
+  legal: [
+    { href: "/terms", label: "Terms & Conditions" },
+    { href: "/privacy", label: "Privacy Policy" },
+  ],
 };

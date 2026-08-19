@@ -770,3 +770,44 @@ a.entry:hover .go { opacity: 1; transform: none; color: var(--seed); }
   }
   .hr { transform: none; }
 }
+
+/* ---------- legal pages (terms, privacy) ---------- */
+
+.legal { counter-reset: clause; list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.legal > li {
+  counter-increment: clause;
+  display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: clamp(14px, 2.4vw, 30px);
+  padding: clamp(24px, 3.2vw, 42px) 0; border-bottom: 1px solid var(--rule);
+}
+.legal > li::before {
+  content: counter(clause, decimal-leading-zero);
+  font-family: var(--mono); font-weight: 700; font-size: 0.68rem; letter-spacing: 0.16em;
+  color: var(--seed); padding-top: 6px;
+}
+.legal h2 {
+  font-family: var(--display); font-weight: 600; letter-spacing: -0.02em;
+  font-size: clamp(1.14rem, 1.7vw, 1.5rem); line-height: 1.2; margin: 0 0 14px; color: var(--ink);
+}
+.legal-body { max-width: 68ch; }
+.legal-body p { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.75; margin: 0 0 12px; }
+.legal-body p:last-child { margin-bottom: 0; }
+.legal-body ul { margin: 0 0 12px; padding-left: 18px; }
+.legal-body li {
+  color: var(--ink-soft); font-size: 0.95rem; line-height: 1.7; margin-bottom: 7px;
+}
+.legal-body strong { color: var(--ink-2); font-weight: 600; }
+.legal-body a { border-bottom: 1px solid currentColor; }
+
+@media (max-width: 640px) {
+  .legal > li { grid-template-columns: 1fr; gap: 8px; }
+  .legal > li::before { padding-top: 0; }
+}
+
+/* Legal links live in the footer's bottom bar, so they run inline - the
+   blanket `.foot a { display: block }` would otherwise stack them. */
+.foot-legal { display: flex; gap: 18px; flex-wrap: wrap; }
+.foot-legal a {
+  display: inline; padding: 0; font-size: inherit; letter-spacing: inherit;
+  text-transform: inherit; color: var(--ink-faint);
+}
+.foot-legal a:hover { color: var(--proven); }
